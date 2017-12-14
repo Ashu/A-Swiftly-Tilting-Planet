@@ -1,4 +1,4 @@
-# A Swiftly Tilting Planet
+# How to group UITableViewStyle (Swift 4 + iOS 11)
 
 ![Image](https://github.com/wells86/A-Swiftly-Tilting-Planet/blob/master/2018/UITableViewStyle.grouped/UITableViewStyle.grouped/UITableViewStyle.png)
 
