@@ -20,16 +20,16 @@ class ViewController: UIViewController {
         return view as! SKView
     }
     
-    let scene = SKScene(size: CGSize(width: 1920, height: 1080))
+    let scene = SKScene(size: CGSize(width: 1125, height: 2436)) // iPhone X
     
     override func viewWillAppear(_ animated: Bool) {
         skView.presentScene(scene)
+        scene.backgroundColor = UIColor(red: 102/255, green: 210/255, blue: 255/255, alpha: 1.0)
         
-        let hello = SKLabelNode(text: "Hello, SpriteKit")
-        hello.fontSize = 127
-        hello.fontColor = .red
-        hello.position = CGPoint(x: scene.size.width / 2, y: scene.size.height / 2)
-        scene.addChild(hello)
+        let two = SKSpriteNode(imageNamed: "201")
+        two.size = CGSize(width: 300, height: 300)
+        two.position = CGPoint(x: scene.size.width / 2, y: scene.size.height / 2)
+        scene.addChild(two)
         
     }
 }
