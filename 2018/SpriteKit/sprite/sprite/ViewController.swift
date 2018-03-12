@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         view = SKView()
     }
     
+    let two = SKSpriteNode(imageNamed: "201")
+    
+    
     var skView: SKView {
         return view as! SKView
     }
@@ -26,11 +29,14 @@ class ViewController: UIViewController {
         skView.presentScene(scene)
         scene.backgroundColor = UIColor(red: 102/255, green: 210/255, blue: 255/255, alpha: 1.0)
         
-        let two = SKSpriteNode(imageNamed: "201")
         two.size = CGSize(width: 300, height: 300)
         two.position = CGPoint(x: scene.size.width / 2, y: scene.size.height / 2)
         scene.addChild(two)
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        two.removeFromParent()
     }
 }
 
