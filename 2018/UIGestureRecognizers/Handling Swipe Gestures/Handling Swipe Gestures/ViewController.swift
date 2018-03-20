@@ -29,11 +29,9 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(upSwipe)
         view.addGestureRecognizer(downSwipe)
-
     }
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
-        
         if sender.state == .ended {
             switch sender.direction {
             case .right:
