@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let imageView: UIImageView = {
         let image = UIImageView(image: #imageLiteral(resourceName: "coffee"))
         image.contentMode = .scaleAspectFit
-        image.isUserInteractionEnabled = true
+        image.isUserInteractionEnabled = true // Set this to true. Image views and labels set this to false by default.
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
         imageView.addGestureRecognizer(longPress)
+        
     }
     
     override var canBecomeFirstResponder: Bool {
@@ -40,11 +41,11 @@ class ViewController: UIViewController {
             let menu = UIMenuController.shared
             becomeFirstResponder()
             
-            let menuCrop = UIMenuItem(title: "Crop", action: #selector(handleMenuItemAction))
-            let menuRotate = UIMenuItem(title: "Rotate", action: #selector(handleMenuItemAction))
-            let menuContrast = UIMenuItem(title: "Contrast", action: #selector(handleMenuItemAction))
-            let menuVibrance = UIMenuItem(title: "Vibrance", action: #selector(handleMenuItemAction))
-            menu.menuItems = [menuCrop, menuRotate, menuContrast, menuVibrance]
+            let menuItemCrop = UIMenuItem(title: "Crop", action: #selector(handleMenuItemAction))
+            let menuItemRotate = UIMenuItem(title: "Rotate", action: #selector(handleMenuItemAction))
+            let menuItemContrast = UIMenuItem(title: "Contrast", action: #selector(handleMenuItemAction))
+            let menuItemVibrance = UIMenuItem(title: "Vibrance", action: #selector(handleMenuItemAction))
+            menu.menuItems = [menuItemCrop, menuItemRotate, menuItemContrast, menuItemVibrance]
             
             let location = sender.location(in: sender.view)
             let menuLocation = CGRect(x: location.x, y: location.y, width: 0, height: 0)
@@ -54,7 +55,8 @@ class ViewController: UIViewController {
     }
     
     @objc func handleMenuItemAction() {
-        print("handled menu item action!!")
+        print("menu item tapped")
     }
+    
 }
 
