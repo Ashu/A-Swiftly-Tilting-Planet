@@ -20,20 +20,21 @@ class ViewController: UIViewController {
     }
     
     func handleAlert() {
-        let alert = UIAlertController(title: "Hello", message: "This is an alert", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Red", style: .default, handler: { _ in
+        let alert = UIAlertController(title: "Hello", message: "This is an alert", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Red", style: .default, handler: {_ in
             self.view.backgroundColor = .red
         }))
         
-        alert.addAction(UIAlertAction(title: "Green", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Green", style: .default, handler: {_ in
             self.view.backgroundColor = .green
         }))
         
-        alert.addAction(UIAlertAction(title: "White", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "White", style: .default, handler: {_ in
             self.view.backgroundColor = .white
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in
             print("cancel")
         }))
         
