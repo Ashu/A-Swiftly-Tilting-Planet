@@ -16,6 +16,7 @@
 		00A87C212067FD250075DD06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A87C1F2067FD250075DD06 /* LaunchScreen.storyboard */; };
 		00A87C29206816890075DD06 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A87C28206816890075DD06 /* Helper.swift */; };
 		00A87C2B2068269A0075DD06 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A87C2A2068269A0075DD06 /* WhackSlot.swift */; };
+		00A87C2E2068AB260075DD06 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A87C2D2068AB260075DD06 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		00A87C222067FD250075DD06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00A87C28206816890075DD06 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		00A87C2A2068269A0075DD06 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
+		00A87C2D2068AB260075DD06 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A87C2E2068AB260075DD06 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 			children = (
 				00A87C0F2067FD240075DD06 /* Whack-a-Egg */,
 				00A87C0E2067FD240075DD06 /* Products */,
+				00A87C2C2068AB260075DD06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +78,14 @@
 				00A87C222067FD250075DD06 /* Info.plist */,
 			);
 			path = "Whack-a-Egg";
+			sourceTree = "<group>";
+		};
+		00A87C2C2068AB260075DD06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00A87C2D2068AB260075DD06 /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +121,11 @@
 					00A87C0C2067FD240075DD06 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
