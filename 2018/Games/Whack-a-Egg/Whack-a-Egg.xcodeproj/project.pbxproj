@@ -17,6 +17,9 @@
 		00A87C29206816890075DD06 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A87C28206816890075DD06 /* Helper.swift */; };
 		00A87C2B2068269A0075DD06 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A87C2A2068269A0075DD06 /* WhackSlot.swift */; };
 		00A87C2E2068AB260075DD06 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A87C2D2068AB260075DD06 /* GameKit.framework */; };
+		00A87C302069850D0075DD06 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A87C2F2069850D0075DD06 /* GameOver.swift */; };
+		00A87C322069852F0075DD06 /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 00A87C312069852F0075DD06 /* GameOver.sks */; };
+		00A87C3520699A280075DD06 /* happy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00A87C3420699A280075DD06 /* happy.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		00A87C28206816890075DD06 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		00A87C2A2068269A0075DD06 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 		00A87C2D2068AB260075DD06 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		00A87C2F2069850D0075DD06 /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		00A87C312069852F0075DD06 /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		00A87C3420699A280075DD06 /* happy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happy.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +74,12 @@
 			children = (
 				00A87C102067FD240075DD06 /* AppDelegate.swift */,
 				00A87C182067FD250075DD06 /* GameViewController.swift */,
-				00A87C122067FD240075DD06 /* GameScene.sks */,
+				00A87C33206985530075DD06 /* sks */,
 				00A87C28206816890075DD06 /* Helper.swift */,
 				00A87C162067FD250075DD06 /* GameScene.swift */,
+				00A87C2F2069850D0075DD06 /* GameOver.swift */,
 				00A87C2A2068269A0075DD06 /* WhackSlot.swift */,
+				00A87C3420699A280075DD06 /* happy.mp3 */,
 				00A87C1A2067FD250075DD06 /* Main.storyboard */,
 				00A87C1D2067FD250075DD06 /* Assets.xcassets */,
 				00A87C1F2067FD250075DD06 /* LaunchScreen.storyboard */,
@@ -86,6 +94,15 @@
 				00A87C2D2068AB260075DD06 /* GameKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00A87C33206985530075DD06 /* sks */ = {
+			isa = PBXGroup;
+			children = (
+				00A87C122067FD240075DD06 /* GameScene.sks */,
+				00A87C312069852F0075DD06 /* GameOver.sks */,
+			);
+			path = sks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,10 +169,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A87C322069852F0075DD06 /* GameOver.sks in Resources */,
 				00A87C1C2067FD250075DD06 /* Main.storyboard in Resources */,
 				00A87C132067FD240075DD06 /* GameScene.sks in Resources */,
 				00A87C1E2067FD250075DD06 /* Assets.xcassets in Resources */,
 				00A87C212067FD250075DD06 /* LaunchScreen.storyboard in Resources */,
+				00A87C3520699A280075DD06 /* happy.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +188,7 @@
 				00A87C172067FD250075DD06 /* GameScene.swift in Sources */,
 				00A87C2B2068269A0075DD06 /* WhackSlot.swift in Sources */,
 				00A87C192067FD250075DD06 /* GameViewController.swift in Sources */,
+				00A87C302069850D0075DD06 /* GameOver.swift in Sources */,
 				00A87C112067FD240075DD06 /* AppDelegate.swift in Sources */,
 				00A87C29206816890075DD06 /* Helper.swift in Sources */,
 			);
