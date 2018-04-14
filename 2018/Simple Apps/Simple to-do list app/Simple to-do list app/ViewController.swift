@@ -107,7 +107,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             
-            textView.text.append("\(text)\n\n")
+            textView.text.append("●  \(text)\n\n")
             addTextField.text = ""
             addTextField.resignFirstResponder()
         }
