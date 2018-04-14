@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     let titleLable: UILabel = {
         let label = UILabel()
@@ -59,15 +59,15 @@ class ViewController: UIViewController {
     let textView: UITextView = {
         let text = UITextView()
         text.font = UIFont.systemFont(ofSize: 16)
-        text.backgroundColor = .red
-        text.keyboardType = UIKeyboardType.default
-        text.returnKeyType = UIReturnKeyType.done
+        text.isEditable = false
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addTextField.delegate = self
         
         view.addSubview(titleLable)
         view.addSubview(addTextField)
@@ -102,7 +102,20 @@ class ViewController: UIViewController {
     }
     
     @objc func handleButtonTap() {
-        print("button tapped!")
+        if let text = addTextField.text {
+            if text == "" {
+                return
+            }
+            
+            textView.text.append("\(text)\n\n")
+            addTextField.text = ""
+            addTextField.resignFirstResponder()
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        addTextField.resignFirstResponder()
+        return true
     }
 }
 
