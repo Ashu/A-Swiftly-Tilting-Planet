@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         text.borderStyle = UITextBorderStyle.roundedRect
         text.autocorrectionType = UITextAutocorrectionType.yes
         text.keyboardType = UIKeyboardType.default
-        text.returnKeyType = UIReturnKeyType.done
+        text.returnKeyType = UIReturnKeyType.default
         text.clearButtonMode = UITextFieldViewMode.whileEditing
         text.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         text.translatesAutoresizingMaskIntoConstraints = false
