@@ -10,18 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let labelOne: UILabel = {
-        let label = UILabel()
-        label.text = "Welcome to"
-        label.font = UIFont.boldSystemFont(ofSize: 27)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    let shoppingCart: UIImageView = {
+        let cart = UIImageView(image: #imageLiteral(resourceName: "shopping"))
+        cart.translatesAutoresizingMaskIntoConstraints = false
+        return cart
     }()
     
-    let labelTwo: UILabel = {
+    let burrito: UILabel = {
         let label = UILabel()
-        label.text = "App Name"
-        label.font = UIFont.boldSystemFont(ofSize: 27)
+        label.text = "🌯"
+        label.font = UIFont.boldSystemFont(ofSize: 80)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,45 +27,64 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(labelOne)
-        view.addSubview(labelTwo)
+        view.addSubview(shoppingCart)
+        view.addSubview(burrito)
         
         setUpLayout()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        labelOne.alpha = 0
-        labelTwo.alpha = 0
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        UIView.animate(withDuration: 2.5) {
-//            self.label.alpha = 1
-//            self.label.frame.origin.y -= 100
-//        }
-        
-        UIView.animate(withDuration: 2.0, delay: 0, options: [.curveEaseOut], animations: {
-            self.labelOne.alpha = 1
-            self.labelOne.frame.origin.y = 80
-            self.labelOne.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        }) { completed in
-            
-        }
-        
-        UIView.animate(withDuration: 2.5, delay: 1, options: [.curveEaseOut], animations: {
-            self.labelTwo.alpha = 1
-            self.labelTwo.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
-        }) { completed in
-            
-        }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        burrito.animate([
+            .fadeOut(duration: 1.0)
+        ])
     }
     
     func setUpLayout() {
-        labelOne.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        labelOne.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            shoppingCart.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            shoppingCart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            shoppingCart.widthAnchor.constraint(equalToConstant: 75),
+            shoppingCart.heightAnchor.constraint(equalToConstant: 67.5),
+            
+            burrito.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            burrito.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+}
+
+struct Animation {
+    var duration: TimeInterval
+    var closure: (UIView) -> Void
+}
+
+extension Animation {
+    static func fadeIn(duration: TimeInterval) -> Animation {
+        return Animation(duration: duration, closure: { $0.alpha = 1 })
+    }
+    
+    static func fadeOut(duration: TimeInterval) -> Animation {
+        return Animation(duration: duration, closure: { $0.alpha = 0 })
+    }
+    
+    static func scale(to size: CGSize, duration: TimeInterval) -> Animation {
+        return Animation(duration: duration, closure: { $0.frame.size = size })
+    }
+}
+
+extension UIView {
+    func animate(_ animations: [Animation]) {
+        guard !animations.isEmpty else {
+            return
+        }
         
-        labelTwo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        labelTwo.topAnchor.constraint(equalTo: labelOne.bottomAnchor, constant: 50).isActive = true
+        var animations = animations
+        let animation = animations.removeFirst()
+        
+        UIView.animate(withDuration: animation.duration, animations: {
+            animation.closure(self)
+        }, completion: { _ in
+            self.animate(animations)
+        })
     }
 }
 
