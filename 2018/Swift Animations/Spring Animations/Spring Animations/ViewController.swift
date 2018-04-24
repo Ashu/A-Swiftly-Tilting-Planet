@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     let button: UIButton = {
         let button = UIButton()
         button.setTitle("Continue", for: .normal)
+        button.addTarget(self, action: #selector(handleButtonPress), for: .touchUpInside)
         return button
     }()
     
@@ -46,12 +47,40 @@ class ViewController: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 27)
         return label
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         
+        setUpStackView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        label.alpha = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        animateInWithSpring()
+    }
+    
+    // MARK: === Handle actions
+    @objc func handleButtonPress() {
+        
+    }
+    
+    func animateInWithSpring() {
+        UIView.animate(withDuration: 2.0, delay: 0.25, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
+            
+            self.label.alpha = 1
+            self.label.frame.origin.y -= 50
+            
+            
+        }, completion: nil)
+        
+    }
+    
+    func setUpStackView() {
         let stackView = UIStackView(arrangedSubviews: [label,segmentedControl,textField,button,footerLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -66,8 +95,8 @@ class ViewController: UIViewController {
             stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             stackView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -72),
             stackView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: -50)
-        ])
+            ])
     }
-    
+
 }
 
