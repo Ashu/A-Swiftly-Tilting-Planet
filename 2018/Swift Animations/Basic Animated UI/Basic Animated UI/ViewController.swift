@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     let settingsButton: UIButton = {
         let button = UIButton()
@@ -26,14 +26,15 @@ class ViewController: UIViewController {
     
     let addButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Add", for: .normal)
+        button.setTitle("+", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 26)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 12
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 2
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
         button.addTarget(self, action: #selector(handleAddPress), for: .touchUpInside)
         return button
     }()
@@ -58,15 +59,51 @@ class ViewController: UIViewController {
         return button
     }()
     
-
+    let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["Spent", "Deposit"])
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.tintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        segmentedControl.addTarget(self, action: #selector(handleSegmentedControlValueChange(_:)), for: .valueChanged)
+        return segmentedControl
+    }()
+    
+    let textField: UITextField = {
+        let text = UITextField()
+        text.placeholder = "Enter amount spent"
+        text.keyboardType = .decimalPad
+        text.clearButtonMode = .whileEditing
+        text.borderStyle = UITextBorderStyle.roundedRect
+        return text
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        
+        textField.delegate = self
+        textField.inputAccessoryView = accessoryView()
+        textField.inputAccessoryView?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
+        
+        setUpLayout()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        setUpLayout()
+    func accessoryView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8588235294, alpha: 1)
+        
+        let doneButton = UIButton()
+        doneButton.frame = CGRect(x: self.view.frame.width - 80, y: 7, width: 60, height: 30)
+        doneButton.setTitle("done", for: .normal)
+        doneButton.setTitleColor(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), for: .normal)
+        doneButton.addTarget(self, action: #selector(ViewController.doneAction), for: .touchUpInside)
+        view.addSubview(doneButton)
+        
+        return view
+    }
+    
+    @objc func doneAction() {
+        textField.resignFirstResponder()
     }
     
     func setUpLayout() {
@@ -95,9 +132,23 @@ class ViewController: UIViewController {
             doneButton.topAnchor.constraint(equalTo: addView.topAnchor, constant: 12),
             doneButton.trailingAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.trailingAnchor, constant: -12)
         ])
+        
+        let addStackView = UIStackView(arrangedSubviews: [segmentedControl, textField])
+        addStackView.translatesAutoresizingMaskIntoConstraints = false
+        addStackView.axis = .vertical
+        addStackView.spacing = 12
+        addStackView.distribution = .equalCentering
+        
+        addView.addSubview(addStackView)
+        
+        NSLayoutConstraint.activate([
+            addStackView.topAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.topAnchor, constant: 72),
+            addStackView.centerXAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.centerXAnchor),
+            addStackView.widthAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.widthAnchor, constant: -50)
+        ])
     }
     
-    // MARK: === Handle buttons
+    // MARK: === Handle actions
     @objc func handleSettingsPress() {
         print("=== Settings")
     }
@@ -108,11 +159,25 @@ class ViewController: UIViewController {
     }
     
     @objc func handleDonePress() {
+        textField.resignFirstResponder()
         animateViewOffScreen()
         print("=== Done")
     }
     
-    // MARK: Animations! :)
+    @objc func handleSegmentedControlValueChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            textField.placeholder = "Enter amount spent"
+        } else {
+            textField.placeholder = "Enter deposit amount"
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // MARK: === Animations! :)
     func animateViewOnScreen() {
         UIView.animate(withDuration: 1.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             NSLayoutConstraint.activate([
@@ -135,4 +200,3 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
 }
-
