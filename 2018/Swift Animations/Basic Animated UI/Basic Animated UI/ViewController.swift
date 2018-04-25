@@ -62,9 +62,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Spent", "Deposit"])
         segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.tintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        segmentedControl.tintColor = .clear
+        
+        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: UIColor.lightGray], for: .normal)
+        segmentedControl.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: UIColor.init(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)], for: .selected)
+        
+        segmentedControl.backgroundColor = .clear
         segmentedControl.addTarget(self, action: #selector(handleSegmentedControlValueChange(_:)), for: .valueChanged)
         return segmentedControl
+    }()
+    
+    let buttonBar: UIView = {
+        let bar = UIView()
+        bar.translatesAutoresizingMaskIntoConstraints = false
+        bar.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        bar.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        return bar
     }()
     
     let textField: UITextField = {
@@ -76,6 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return text
     }()
     
+    // MARK: === View did load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,11 +120,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
     }
     
+    // MARK: === Set up layout
     func setUpLayout() {
         let stackView = UIStackView(arrangedSubviews: [settingsButton, addButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .equalCentering
+        stackView.distribution = .equalSpacing
         
         view.addSubview(stackView)
         
@@ -123,6 +138,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // MARK: === AddView
         view.addSubview(addView)
         addView.addSubview(doneButton)
+        addView.addSubview(buttonBar)
         
         NSLayoutConstraint.activate([
             addView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50),
@@ -133,18 +149,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             doneButton.trailingAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.trailingAnchor, constant: -12)
         ])
         
-        let addStackView = UIStackView(arrangedSubviews: [segmentedControl, textField])
+        let addStackView = UIStackView(arrangedSubviews: [segmentedControl, buttonBar, textField])
         addStackView.translatesAutoresizingMaskIntoConstraints = false
         addStackView.axis = .vertical
-        addStackView.spacing = 12
-        addStackView.distribution = .equalCentering
+        addStackView.spacing = 24
+        addStackView.setCustomSpacing(2, after: segmentedControl)
         
         addView.addSubview(addStackView)
         
         NSLayoutConstraint.activate([
             addStackView.topAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.topAnchor, constant: 72),
             addStackView.centerXAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.centerXAnchor),
-            addStackView.widthAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.widthAnchor, constant: -50)
+            addStackView.widthAnchor.constraint(equalTo: addView.safeAreaLayoutGuide.widthAnchor, constant: -50),
+            
+            buttonBar.leftAnchor.constraint(equalTo: segmentedControl.leftAnchor),
+            buttonBar.widthAnchor.constraint(equalTo: segmentedControl.widthAnchor, multiplier: 1 / CGFloat(segmentedControl.numberOfSegments))
         ])
     }
     
@@ -155,16 +174,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @objc func handleAddPress() {
         animateViewOnScreen()
-        print("=== Add")
     }
     
     @objc func handleDonePress() {
         textField.resignFirstResponder()
+        textField.text = ""
         animateViewOffScreen()
-        print("=== Done")
     }
     
     @objc func handleSegmentedControlValueChange(_ sender: UISegmentedControl) {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.buttonBar.frame.origin.x = (self.segmentedControl.frame.width / CGFloat(self.segmentedControl.numberOfSegments)) * CGFloat(self.segmentedControl.selectedSegmentIndex)
+        }
+        
         if sender.selectedSegmentIndex == 0 {
             textField.placeholder = "Enter amount spent"
         } else {
