@@ -10,13 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let viewOne = label
-    let viewTwo = textField
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let stackView = UIStackView(arrangedSubviews: [viewOne, viewTwo])
+        let stackView = UIStackView(arrangedSubviews: [label, textField])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 24
