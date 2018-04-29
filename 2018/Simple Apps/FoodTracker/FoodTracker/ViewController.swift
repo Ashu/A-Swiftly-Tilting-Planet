@@ -39,6 +39,16 @@ class ViewController: UIViewController {
         setUpStackView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        label.alpha = 0
+        textField.alpha = 0
+        button.frame.origin.x -= 150
+        moveUP()
+        fadeIn()
+        moveIn()
+    }
+    
     func setUpStackView() {
         let stackView = UIStackView(arrangedSubviews: [label, textField, button])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,5 +67,26 @@ class ViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
     }
+    
+    func moveUP() {
+        UIView.animate(withDuration: 1.5, animations: {
+            self.label.alpha = 1
+            self.label.frame.origin.y += -50
+        })
+    }
+    
+    func fadeIn() {
+        UIView.animate(withDuration: 1.5, delay: 1.0, options: [], animations: {
+            self.textField.alpha = 1
+        }, completion: nil)
+    }
+    
+    func moveIn() {
+        UIView.animate(withDuration: 1.2, delay: 1.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [], animations: {
+            self.button.frame.origin.x = 150
+        }, completion: nil)
+        
+    }
+    
 }
 
