@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     let button: UIButton = {
         let button = UIButton()
         button.setTitle("Set default label text", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), for: .normal)
         return button
     }()
     
