@@ -14,12 +14,18 @@ class ViewController: UIViewController {
     
     override func loadView() {
         view = header
+        header.stepper.addTarget(self, action: #selector(handleStepper(_:)), for: .valueChanged)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
+        view.backgroundColor = .white
+        
+    }
+    
+    @objc func handleStepper(_ sender: UIStepper) {
+        print("=== \(sender.value)")
     }
 
 }

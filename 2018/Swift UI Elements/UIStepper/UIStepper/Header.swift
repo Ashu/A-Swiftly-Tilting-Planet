@@ -9,6 +9,9 @@
 import UIKit
 
 class Header: UIView {
+    
+    let stepper = Stepper()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createSubviews()
@@ -36,14 +39,29 @@ class Header: UIView {
         
         headerBackground.addSubview(header)
         
+        stepper.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(stepper)
+        
+        let label = UILabel()
+        label.text = "Hello, stepper"
+        
+        let stackView = UIStackView(arrangedSubviews: [label, stepper])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(stackView)
+        
         NSLayoutConstraint.activate([
             headerBackground.topAnchor.constraint(equalTo: self.topAnchor),
             headerBackground.widthAnchor.constraint(equalTo: self.widthAnchor),
             headerBackground.heightAnchor.constraint(equalToConstant: 120),
             
             header.centerXAnchor.constraint(equalTo: headerBackground.safeAreaLayoutGuide.centerXAnchor),
-            header.centerYAnchor.constraint(equalTo: headerBackground.safeAreaLayoutGuide.centerYAnchor)
-            ])
+            header.centerYAnchor.constraint(equalTo: headerBackground.safeAreaLayoutGuide.centerYAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: headerBackground.bottomAnchor, constant: 50),
+            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            stackView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -40)
+        ])
         
     }
 }
