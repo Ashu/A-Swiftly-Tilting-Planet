@@ -26,13 +26,14 @@ class ViewController: UIViewController {
             imageView.heightAnchor.constraint(equalToConstant: 384)
         ])
         
+        // URLSession code here
         let imageURL = URL(string: "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png")!
         
         let task = URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
             if error == nil {
                 let downloadedImage = UIImage(data: data!)
                 
-                DispatchQueue.main.async() {
+                DispatchQueue.main.async {
                     self.imageView.image = downloadedImage
                 }
             }
