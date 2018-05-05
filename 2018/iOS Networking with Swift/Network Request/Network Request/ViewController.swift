@@ -22,9 +22,23 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             imageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             imageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 200),
-            imageView.heightAnchor.constraint(equalToConstant: 200)
+            imageView.widthAnchor.constraint(equalToConstant: 259),
+            imageView.heightAnchor.constraint(equalToConstant: 384)
         ])
+        
+        let imageURL = URL(string: "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png")!
+        
+        let task = URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+            if error == nil {
+                let downloadedImage = UIImage(data: data!)
+                
+                DispatchQueue.main.async() {
+                    self.imageView.image = downloadedImage
+                }
+            }
+        }
+        
+        task.resume()
     }
 }
 
