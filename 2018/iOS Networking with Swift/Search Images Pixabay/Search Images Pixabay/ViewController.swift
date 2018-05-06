@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Get New Photo", for: .normal)
         button.backgroundColor = .white
+        button.setTitleColor(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), for: .normal)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 12
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -50,9 +51,9 @@ class ViewController: UIViewController {
     
     func setUIEnabled(_ enabled: Bool) {
         if enabled {
-            getPhotoButton.setTitleColor(.lightGray, for: .disabled)
+            getPhotoButton.alpha = 1.0
         } else {
-            getPhotoButton.setTitleColor(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), for: .normal)
+            getPhotoButton.alpha = 0.5
         }
     }
     
@@ -61,6 +62,7 @@ class ViewController: UIViewController {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .equalCentering
+        stackView.setCustomSpacing(24, after: photoLabel)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(stackView)
