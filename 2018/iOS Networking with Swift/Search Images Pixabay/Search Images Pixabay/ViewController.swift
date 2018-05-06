@@ -26,6 +26,12 @@ class ViewController: UIViewController {
     let getPhotoButton: UIButton = {
         let button = UIButton()
         button.setTitle("Get New Photo", for: .normal)
+        button.backgroundColor = .white
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 12
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.addTarget(self, action: #selector(getNewPhoto), for: .touchUpInside)
         return button
     }()
@@ -38,7 +44,16 @@ class ViewController: UIViewController {
     }
     
     @objc func getNewPhoto() {
+        setUIEnabled(false)
         photoLabel.text = "Photo coming soon"
+    }
+    
+    func setUIEnabled(_ enabled: Bool) {
+        if enabled {
+            getPhotoButton.setTitleColor(.lightGray, for: .disabled)
+        } else {
+            getPhotoButton.setTitleColor(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), for: .normal)
+        }
     }
     
     func setUpLayout() {
