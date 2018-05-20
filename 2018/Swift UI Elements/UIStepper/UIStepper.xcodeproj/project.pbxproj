@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00748699209B880500974C39 /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00748698209B880500974C39 /* Stepper.swift */; };
 		009AFBC5209B85A000D8930E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBC4209B85A000D8930E /* AppDelegate.swift */; };
 		009AFBC7209B85A000D8930E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBC6209B85A000D8930E /* ViewController.swift */; };
 		009AFBCC209B85A100D8930E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009AFBCB209B85A100D8930E /* Assets.xcassets */; };
@@ -16,7 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00748698209B880500974C39 /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
 		009AFBC1209B85A000D8930E /* UIStepper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIStepper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009AFBC4209B85A000D8930E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		009AFBC6209B85A000D8930E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 			children = (
 				009AFBC4209B85A000D8930E /* AppDelegate.swift */,
 				009AFBC6209B85A000D8930E /* ViewController.swift */,
-				00748698209B880500974C39 /* Stepper.swift */,
 				009AFBD6209B85B800D8930E /* Header.swift */,
 				009AFBCB209B85A100D8930E /* Assets.xcassets */,
 				009AFBCD209B85A100D8930E /* LaunchScreen.storyboard */,
@@ -140,7 +137,6 @@
 				009AFBC7209B85A000D8930E /* ViewController.swift in Sources */,
 				009AFBD7209B85B800D8930E /* Header.swift in Sources */,
 				009AFBC5209B85A000D8930E /* AppDelegate.swift in Sources */,
-				00748699209B880500974C39 /* Stepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

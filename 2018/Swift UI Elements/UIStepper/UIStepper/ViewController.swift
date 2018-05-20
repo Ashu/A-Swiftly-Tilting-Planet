@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
     
     @objc func handleStepper(_ sender: UIStepper) {
-        print("=== \(sender.value)")
+        header.label.text = "Hello, stepper \(sender.value)"
     }
 
 }

@@ -10,7 +10,8 @@ import UIKit
 
 class Header: UIView {
     
-    let stepper = Stepper()
+    let stepper = UIStepper(frame: CGRect(x: 110, y: 250, width: 0, height: 0))
+    let label = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +26,7 @@ class Header: UIView {
     func createSubviews() {
         
         let headerBackground = UIView()
-        headerBackground.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.5137254902, blue: 0.2352941176, alpha: 1)
+        headerBackground.backgroundColor = #colorLiteral(red: 0.9294117647, green: 0.3215686275, blue: 0.2470588235, alpha: 1)
         headerBackground.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(headerBackground)
@@ -39,10 +40,10 @@ class Header: UIView {
         
         headerBackground.addSubview(header)
         
+        stepper.maximumValue = 10
         stepper.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stepper)
         
-        let label = UILabel()
         label.text = "Hello, stepper"
         
         let stackView = UIStackView(arrangedSubviews: [label, stepper])
