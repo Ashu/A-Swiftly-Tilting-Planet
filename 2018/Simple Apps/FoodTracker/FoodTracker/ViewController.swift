@@ -32,6 +32,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return button
     }()
     
+    let image: UIImageView = {
+        let image = UIImageView(image: #imageLiteral(resourceName: "no-photo"))
+        image.frame = CGRect(x: 0, y: 0, width: 320, height: 320)
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
+    
     @objc func handleButton() {
         label.text = "Meal Name"
     }
@@ -57,7 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setUpStackView() {
-        let stackView = UIStackView(arrangedSubviews: [label, textField, button])
+        let stackView = UIStackView(arrangedSubviews: [label, textField, button, image])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .leading
