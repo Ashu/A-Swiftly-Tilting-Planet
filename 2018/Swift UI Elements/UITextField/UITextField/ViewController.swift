@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     let headerView: UIView = {
         let header = UIView()
@@ -26,19 +26,35 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
+    let textField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = UITextBorderStyle.roundedRect
+        textField.placeholder = "Hello placeholder!"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        textField.delegate = self
+        
         setUpLayouts()
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     
     func setUpLayouts() {
         view.addSubview(headerView)
         view.addSubview(headerLabel)
         
-        
+        view.addSubview(textField)
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -46,8 +62,11 @@ class ViewController: UIViewController {
             headerView.heightAnchor.constraint(equalToConstant: 120),
             
             headerLabel.centerXAnchor.constraint(equalTo: headerView.safeAreaLayoutGuide.centerXAnchor),
-            headerLabel.centerYAnchor.constraint(equalTo: headerView.safeAreaLayoutGuide.centerYAnchor)
-            ])
+            headerLabel.centerYAnchor.constraint(equalTo: headerView.safeAreaLayoutGuide.centerYAnchor),
+            
+            textField.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            textField.topAnchor.constraint(equalTo: headerView.safeAreaLayoutGuide.bottomAnchor, constant: 40)
+        ])
     }
 }
 
