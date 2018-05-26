@@ -16,19 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeData as String)
-        attributeSet.title = "Document Report"
-        attributeSet.contentDescription = "Document"
+        attributeSet.title = "Hell0"
         
-        let item = CSSearchableItem(uniqueIdentifier: "1", domainIdentifier: "file-1", attributeSet: attributeSet)
-        
-        CSSearchableIndex.default().indexSearchableItems([item]) { error in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-            }
-            else {
-                print("Item indexed.")
-            }
-        }
     }
 }
 
