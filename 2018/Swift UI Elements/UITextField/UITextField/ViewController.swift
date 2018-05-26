@@ -35,6 +35,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return textField
     }()
     
+    let refresh: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        return refresh
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
