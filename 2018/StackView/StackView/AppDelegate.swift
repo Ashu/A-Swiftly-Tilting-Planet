@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Widget
+//  StackView
 //
 //  Created by Caleb Wells on 5/26/18.
 //  Copyright © 2018 Caleb Wells. All rights reserved.
