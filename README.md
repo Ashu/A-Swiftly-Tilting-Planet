@@ -1,4 +1,4 @@
-![Image]()
+![Image](https://github.com/calebrwells/A-Swiftly-Tilting-Planet/blob/master/Channel%20Art.png)
 # A Swiftly Tilting Planet
 
 Check out the my YouTube channel [A Swiftly Tilting Planet](https://www.youtube.com/channel/UCgdLepqjYyKF4e8vxBZGdEQ).
