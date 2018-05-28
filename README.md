@@ -6,9 +6,11 @@
 <a href="https://twitter.com/cr_wells">
 <img src="https://img.shields.io/badge/contact-@cr_wells-blue.svg?style=flat" alt="Twitter: @cr_wells" />
 </a>
-</p>
 
-Check out the  YouTube channel [A Swiftly Tilting Planet](https://www.youtube.com/channel/UCgdLepqjYyKF4e8vxBZGdEQ).
+<a href="https://www.youtube.com/channel/UCgdLepqjYyKF4e8vxBZGdEQ">
+<img src="https://img.shields.io/badge/watch on YouTube-A Swiftly Tilting Planet-red.svg?style=flat" alt="YouTube:A Swiftly Tilting Planet" />
+</a>
+</p>
 
 ## Table of contents
 
