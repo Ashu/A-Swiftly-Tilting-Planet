@@ -27,9 +27,9 @@ class ViewController: UIViewController {
 //        let stackView = UIStackView(arrangedSubviews: [header])
 //        stackView.axis = .vertical
 //        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        
+//
 //        view.addSubview(stackView)
-//        
+//
 //        stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
 //        stackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
