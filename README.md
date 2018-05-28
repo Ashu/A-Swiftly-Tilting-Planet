@@ -7,7 +7,7 @@ Check out the  YouTube channel [A Swiftly Tilting Planet](https://www.youtube.co
 [#1 Dynamic Type](https://github.com/calebrwells/A-Swiftly-Tilting-Planet#1-dynamic-type)
 
 
-## [#1 Dynamic Type](https://github.com/calebrwells/A-Swiftly-Tilting-Planet/tree/master/2018/Dynamic%20Type)
+## [#1 Dynamic Type](https://youtu.be/s5okf_UOXvA)
 ```swift
 let label = UILabel()
 label.text = "Hello, world"
