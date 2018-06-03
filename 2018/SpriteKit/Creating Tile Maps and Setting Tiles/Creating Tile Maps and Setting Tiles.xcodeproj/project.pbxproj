@@ -11,7 +11,7 @@
 		00260B2720C39DF1002B94E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00260B2620C39DF1002B94E5 /* ViewController.swift */; };
 		00260B2C20C39DF1002B94E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00260B2B20C39DF1002B94E5 /* Assets.xcassets */; };
 		00260B2F20C39DF1002B94E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00260B2D20C39DF1002B94E5 /* LaunchScreen.storyboard */; };
-		00260B3720C458C2002B94E5 /* TileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 00260B3620C458C2002B94E5 /* TileSet.sks */; };
+		00260B3920C463A0002B94E5 /* TileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 00260B3820C463A0002B94E5 /* TileSet.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		00260B2B20C39DF1002B94E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00260B2E20C39DF1002B94E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00260B3020C39DF1002B94E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00260B3620C458C2002B94E5 /* TileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSet.sks; sourceTree = "<group>"; };
+		00260B3820C463A0002B94E5 /* TileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSet.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			children = (
 				00260B2420C39DF0002B94E5 /* AppDelegate.swift */,
 				00260B2620C39DF1002B94E5 /* ViewController.swift */,
-				00260B3620C458C2002B94E5 /* TileSet.sks */,
+				00260B3820C463A0002B94E5 /* TileSet.sks */,
 				00260B2B20C39DF1002B94E5 /* Assets.xcassets */,
 				00260B2D20C39DF1002B94E5 /* LaunchScreen.storyboard */,
 				00260B3020C39DF1002B94E5 /* Info.plist */,
@@ -122,7 +122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00260B3720C458C2002B94E5 /* TileSet.sks in Resources */,
+				00260B3920C463A0002B94E5 /* TileSet.sks in Resources */,
 				00260B2F20C39DF1002B94E5 /* LaunchScreen.storyboard in Resources */,
 				00260B2C20C39DF1002B94E5 /* Assets.xcassets in Resources */,
 			);

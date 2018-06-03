@@ -15,8 +15,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        scene.scaleMode = SKSceneScaleMode.resizeFill
         
         view = SKView()
+        createTileMap()
     }
     
     var skView: SKView {
@@ -32,21 +34,26 @@ class ViewController: UIViewController {
         // Create Tile Maps and Setting Tiles
         
         // Get the tile map
-        guard let tileSet = SKTileSet(named: "TileSet") else { return }
+        guard let tileSet = SKTileSet(named: "Tile Set") else { return }
         
         // Create a tile map
-        let tileSize = CGSize(width: 32.0, height: 32.0)
-        let tileMap = SKTileMapNode(tileSet: tileSet, columns: 16, rows: 16, tileSize: tileSize)
+        let tileSize = CGSize(width: 64.0, height: 64.0)
+        let tileMap = SKTileMapNode(tileSet: tileSet, columns: 12, rows: 1, tileSize: tileSize)
         
         // Get a tile group from the tile set
         let tileGroup = tileSet.tileGroups.first
         
         // Set tile group for a specific tile
-        tileMap.setTileGroup(tileGroup, forColumn: 4, row: 7)
+        tileMap.setTileGroup(tileGroup, forColumn: 1, row: 1)
         
         // Fill the entire map with a tile group
         tileMap.fill(with: tileGroup)
         
+        // Add the tile map to the scene
+        tileMap.position = CGPoint(x: scene.size.width / 2, y: scene.size.height - 120)
+        scene.addChild(tileMap)
+        
     }
+    
 }
 
