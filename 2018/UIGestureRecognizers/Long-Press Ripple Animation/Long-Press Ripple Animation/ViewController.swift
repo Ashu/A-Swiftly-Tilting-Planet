@@ -12,8 +12,10 @@ class ViewController: UIViewController {
     
     let rippleView: UIView = {
         let rippleView = UIView()
-        rippleView.backgroundColor = #colorLiteral(red: 0.7254901961, green: 0.1843137255, blue: 0.2980392157, alpha: 1)
-        rippleView.translatesAutoresizingMaskIntoConstraints = false
+        rippleView.layer.cornerRadius = 100
+        rippleView.clipsToBounds = false
+        rippleView.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        rippleView.layer.borderWidth = 6.0
         return rippleView
     }()
     
@@ -24,15 +26,8 @@ class ViewController: UIViewController {
         
         view.addSubview(rippleView)
         
-        NSLayoutConstraint.activate([
-            rippleView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            rippleView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            rippleView.heightAnchor.constraint(equalToConstant: 200),
-            rippleView.widthAnchor.constraint(equalToConstant: 200)
-        ])
-        
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
-        rippleView.addGestureRecognizer(longPress)
+        view.addGestureRecognizer(longPress)
         
     }
     
@@ -42,6 +37,13 @@ class ViewController: UIViewController {
     
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
+
+            let location = sender.location(in: sender.view)
+            let viewLocation = CGRect(x: location.x, y: location.y, width: 200, height: 200)
+
+            rippleView.frame = viewLocation
+
+
             animateRippleEffect()
             print("=== Hello ripple!!")
         }
@@ -50,10 +52,10 @@ class ViewController: UIViewController {
     func animateRippleEffect(){
         rippleView.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         
-        UIView.animate(withDuration: 1.5, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
             self.rippleView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }, completion: { finished in
-            self.animateRippleEffect()
+//            self.animateRippleEffect()
         })
     }
 }
