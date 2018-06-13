@@ -27,10 +27,10 @@ class ViewController: UIViewController {
     @objc func handleButtonTap() {
         let activity = NSUserActivity(activityType: "com.Siri-Shortcuts-NSUserActivity.changeText")
         activity.title = "Siri shortcuts!"
-        activity.userInfo = nil
+        activity.userInfo = ["key": "value"]
         activity.isEligibleForSearch = true
-        activity.isEligibleForPrediction = true
-        activity.persistentIdentifier = NSUserActivityPersistentIdentifier("com.Siri-Shortcuts-NSUserActivity.changeText")
+        //activity.isEligibleForPrediction = true
+        //activity.persistentIdentifier = NSUserActivityPersistentIdentifier("com.Siri-Shortcuts-NSUserActivity.changeText")
         view.userActivity = activity
         activity.becomeCurrent()
         
