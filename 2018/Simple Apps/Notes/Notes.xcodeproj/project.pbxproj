@@ -11,6 +11,7 @@
 		002C57B720D0C54F005BDCFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C57B620D0C54F005BDCFD /* ViewController.swift */; };
 		002C57BC20D0C550005BDCFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 002C57BB20D0C550005BDCFD /* Assets.xcassets */; };
 		002C57BF20D0C550005BDCFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002C57BD20D0C550005BDCFD /* LaunchScreen.storyboard */; };
+		00BA0FC020D0E41800AE1A5B /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA0FBF20D0E41800AE1A5B /* NotesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		002C57BB20D0C550005BDCFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		002C57BE20D0C550005BDCFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		002C57C020D0C550005BDCFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00BA0FBF20D0E41800AE1A5B /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				002C57B420D0C54F005BDCFD /* AppDelegate.swift */,
 				002C57B620D0C54F005BDCFD /* ViewController.swift */,
+				00BA0FBF20D0E41800AE1A5B /* NotesViewController.swift */,
 				002C57BB20D0C550005BDCFD /* Assets.xcassets */,
 				002C57BD20D0C550005BDCFD /* LaunchScreen.storyboard */,
 				002C57C020D0C550005BDCFD /* Info.plist */,
@@ -133,6 +136,7 @@
 			files = (
 				002C57B720D0C54F005BDCFD /* ViewController.swift in Sources */,
 				002C57B520D0C54F005BDCFD /* AppDelegate.swift in Sources */,
+				00BA0FC020D0E41800AE1A5B /* NotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

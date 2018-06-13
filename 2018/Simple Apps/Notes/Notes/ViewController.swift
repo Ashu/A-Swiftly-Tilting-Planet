@@ -6,6 +6,7 @@ class ViewController: UITableViewController {
     let notes = "notes"
     
     var data = [String]()
+    var selectedRow = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +18,7 @@ class ViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addRowButton
         navigationItem.leftBarButtonItem = editButtonItem
         
-        load()
+        loadList()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
@@ -42,24 +43,43 @@ class ViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .right)
         }
         
-        save()
+        saveList()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        passDataToView()
+        let notesVC = NotesViewController()
+        navigationController?.pushViewController(notesVC, animated: true)
+        
+        print("\(data[indexPath.row])")
     }
     
     @objc func addRow() {
+        if tableView.isEditing {
+            return
+        }
+        
         let name = "Item \(data.count + 1)"
         data.insert(name, at: 0)
         
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .left)
+        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         
-        save()
+        saveList()
     }
     
-    func save() {
+    func passDataToView() {
+        let notesVC = NotesViewController()
+        selectedRow = tableView.indexPathForSelectedRow!.row
+        notesVC.setText(data[selectedRow])
+    }
+    
+    func saveList() {
         UserDefaults.standard.set(data, forKey: notes)
     }
     
-    func load() {
+    func loadList() {
         if let loadedData: [String] = UserDefaults.standard.value(forKey: notes) as? [String] {
             data = loadedData
             tableView.reloadData()
