@@ -47,8 +47,9 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        passDataToView()
         let notesVC = NotesViewController()
+        selectedRow = tableView.indexPathForSelectedRow!.row
+        notesVC.setText(data[selectedRow])
         navigationController?.pushViewController(notesVC, animated: true)
         
         print("\(data[indexPath.row])")
@@ -67,12 +68,6 @@ class ViewController: UITableViewController {
         tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         
         saveList()
-    }
-    
-    func passDataToView() {
-        let notesVC = NotesViewController()
-        selectedRow = tableView.indexPathForSelectedRow!.row
-        notesVC.setText(data[selectedRow])
     }
     
     func saveList() {
