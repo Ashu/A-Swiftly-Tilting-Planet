@@ -7,13 +7,23 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     @IBAction func pickImage(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
         image.sourceType = UIImagePickerController.SourceType.photoLibrary
         
         self.present(image, animated: true)
+    }
+    
+    func name() {
+        let body: Int
+        
+        body = 12
+        
+        if body > 12 {
+            print("Hello")
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -27,4 +37,3 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
 }
-
