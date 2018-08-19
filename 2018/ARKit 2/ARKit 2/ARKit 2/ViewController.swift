@@ -52,7 +52,7 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         // Create and configure a node for the anchor added to the view's session.
-        let labelNode = SKLabelNode(text: "👾")
+        let labelNode = SKLabelNode(text: "🦆")
         labelNode.horizontalAlignmentMode = .center
         labelNode.verticalAlignmentMode = .center
         return labelNode;
@@ -74,7 +74,6 @@ class ViewController: UIViewController, ARSKViewDelegate, GKGameCenterController
     }
     
     // MARK: === Game Center code
-    
     var gkEnabled = Bool()
     var gkDefaultLeaderBoardID = String()
     

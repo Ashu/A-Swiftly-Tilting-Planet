@@ -34,12 +34,14 @@ class Scene: SKScene {
     
     //MARK: ==== Create the menus
     func createMenu() {
-        playButton = SKSpriteNode(imageNamed: "play")
+        playButton = SKSpriteNode(imageNamed: "Play")
+        playButton.name = "Play"
         playButton.position = CGPoint(x: frame.midX + 200, y: frame.midY)
         playButton.size = CGSize(width: 200, height: 100)
         addChild(playButton)
         
-        gcButton = SKSpriteNode(imageNamed: "gc")
+        gcButton = SKSpriteNode(imageNamed: "GC")
+        gcButton.name = "GC"
         gcButton.position = CGPoint(x: frame.midX - 200, y: frame.midY)
         gcButton.size = CGSize(width: 200, height: 100)
         addChild(gcButton)
@@ -47,19 +49,30 @@ class Scene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        let point = touch.location(in: self.view)
+        let touchLocation = touch.location(in: self.view)
+        let nodesLocation = self.nodes(at: touchLocation)
         
         switch gameState {
         case .home:
-            if point.x > (view?.frame.width)! / 2 {
-                gameState = .playing
-                let fadeOut = SKAction.fadeOut(withDuration: 0.5)
-                let remove = SKAction.removeFromParent()
-                let wait = SKAction.wait(forDuration: 0.5)
-                let sequence = SKAction.sequence([fadeOut, wait, remove])
-                playButton.run(sequence)
-                gcButton.run(sequence)
+            if let name = nodesLocation.last?.name {
+                if name == "Play" {
+                    let fadeOut = SKAction.fadeOut(withDuration: 0.5)
+                    let remove = SKAction.removeFromParent()
+                    let wait = SKAction.wait(forDuration: 0.5)
+                    let sequence = SKAction.sequence([fadeOut, wait, remove])
+                    playButton.run(sequence)
+                    gcButton.run(sequence)
+                }
             }
+//            if touchLocation.x > (view?.frame.width)! / 2 {
+//                gameState = .playing
+//                let fadeOut = SKAction.fadeOut(withDuration: 0.5)
+//                let remove = SKAction.removeFromParent()
+//                let wait = SKAction.wait(forDuration: 0.5)
+//                let sequence = SKAction.sequence([fadeOut, wait, remove])
+//                playButton.run(sequence)
+//                gcButton.run(sequence)
+//            }
         case .playing:
             goHome()
         }
@@ -75,13 +88,13 @@ class Scene: SKScene {
         let gameOverSequence = SKAction.sequence([fadeIn, wait, remove])
         gameOverLabel.run(gameOverSequence)
         
-        let transitioWait = SKAction.wait(forDuration: 1)
+        let transitionWait = SKAction.wait(forDuration: 2)
         let action = SKAction.run {
             let scene = Scene(fileNamed: "Scene")!
-            let transition = SKTransition.moveIn(with: .up, duration: 0.1)
+            let transition = SKTransition.moveIn(with: .down, duration: 0.1)
             self.view?.presentScene(scene, transition: transition)
         }
-        self.run(SKAction.sequence([transitioWait, action]))
+        self.run(SKAction.sequence([transitionWait, action]))
     }
     
     func createAnchor() {
