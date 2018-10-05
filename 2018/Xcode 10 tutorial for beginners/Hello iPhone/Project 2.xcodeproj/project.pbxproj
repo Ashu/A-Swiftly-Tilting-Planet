@@ -12,16 +12,18 @@
 		00395CEB21612C80006950CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00395CE921612C80006950CF /* Main.storyboard */; };
 		00395CED21612C81006950CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00395CEC21612C81006950CF /* Assets.xcassets */; };
 		00395CF021612C81006950CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00395CEE21612C81006950CF /* LaunchScreen.storyboard */; };
+		006FDF6E216804010004FAF2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006FDF6D216804010004FAF2 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00395CE221612C80006950CF /* Hello iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00395CE221612C80006950CF /* Project 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00395CE521612C80006950CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00395CE721612C80006950CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		00395CEA21612C80006950CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00395CEC21612C81006950CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00395CEF21612C81006950CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00395CF121612C81006950CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		006FDF6D216804010004FAF2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +40,7 @@
 		00395CD921612C80006950CF = {
 			isa = PBXGroup;
 			children = (
-				00395CE421612C80006950CF /* Hello iPhone */,
+				00395CE421612C80006950CF /* Project 2 */,
 				00395CE321612C80006950CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +48,12 @@
 		00395CE321612C80006950CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00395CE221612C80006950CF /* Hello iPhone.app */,
+				00395CE221612C80006950CF /* Project 2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00395CE421612C80006950CF /* Hello iPhone */ = {
+		00395CE421612C80006950CF /* Project 2 */ = {
 			isa = PBXGroup;
 			children = (
 				00395CE521612C80006950CF /* AppDelegate.swift */,
@@ -60,16 +62,17 @@
 				00395CEC21612C81006950CF /* Assets.xcassets */,
 				00395CEE21612C81006950CF /* LaunchScreen.storyboard */,
 				00395CF121612C81006950CF /* Info.plist */,
+				006FDF6D216804010004FAF2 /* Default-568h@2x.png */,
 			);
-			path = "Hello iPhone";
+			path = "Project 2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00395CE121612C80006950CF /* Hello iPhone */ = {
+		00395CE121612C80006950CF /* Project 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00395CF421612C81006950CF /* Build configuration list for PBXNativeTarget "Hello iPhone" */;
+			buildConfigurationList = 00395CF421612C81006950CF /* Build configuration list for PBXNativeTarget "Project 2" */;
 			buildPhases = (
 				00395CDE21612C80006950CF /* Sources */,
 				00395CDF21612C80006950CF /* Frameworks */,
@@ -79,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = "Hello iPhone";
+			name = "Project 2";
 			productName = "Hello iPhone";
-			productReference = 00395CE221612C80006950CF /* Hello iPhone.app */;
+			productReference = 00395CE221612C80006950CF /* Project 2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 00395CDD21612C80006950CF /* Build configuration list for PBXProject "Hello iPhone" */;
+			buildConfigurationList = 00395CDD21612C80006950CF /* Build configuration list for PBXProject "Project 2" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00395CE121612C80006950CF /* Hello iPhone */,
+				00395CE121612C80006950CF /* Project 2 */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00395CF021612C81006950CF /* LaunchScreen.storyboard in Resources */,
+				006FDF6E216804010004FAF2 /* Default-568h@2x.png in Resources */,
 				00395CED21612C81006950CF /* Assets.xcassets in Resources */,
 				00395CEB21612C80006950CF /* Main.storyboard in Resources */,
 			);
@@ -321,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00395CDD21612C80006950CF /* Build configuration list for PBXProject "Hello iPhone" */ = {
+		00395CDD21612C80006950CF /* Build configuration list for PBXProject "Project 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00395CF221612C81006950CF /* Debug */,
@@ -330,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00395CF421612C81006950CF /* Build configuration list for PBXNativeTarget "Hello iPhone" */ = {
+		00395CF421612C81006950CF /* Build configuration list for PBXNativeTarget "Project 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00395CF521612C81006950CF /* Debug */,
