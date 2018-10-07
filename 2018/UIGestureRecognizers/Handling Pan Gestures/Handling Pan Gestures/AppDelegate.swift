@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Handling Pan Gestures
 //
-//  Created by Caleb Wells on 3/19/18.
+//  Created by Caleb Wells on 10/7/18.
 //  Copyright © 2018 Caleb Wells. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
