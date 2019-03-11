@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MessageViewController.swift
 //  Swift Meetup
 //
 //  Created by Caleb Wells on 2/25/19.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MessageViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationItem.title = "Messages"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
-
-
 }
-
