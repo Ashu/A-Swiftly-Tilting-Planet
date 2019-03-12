@@ -55,7 +55,7 @@ class CreateEventViewController: UIViewController {
             DispatchQueue.main.async {
                 if granted && error == nil {
                     let event: EKEvent = EKEvent(eventStore: eventStore)
-                    event.title = self.textFields[0].text ?? "" //eventTitle.text!
+                    event.title = self.textFields[0].text ?? ""
                     event.notes = self.textFields[1].text ?? ""
 
                     let evtStartDate = self.dateFormatter.date(from: self.textFields[2].text ?? "")
@@ -70,8 +70,6 @@ class CreateEventViewController: UIViewController {
                     } catch let error as NSError{
                         print("error: \(error)")
                     }
-                    print("Save Event")
-                    print("Date: \(Date())")
 
                 } else {
                     print("Error: \(error)")

@@ -4,7 +4,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         viewControllers = [
             createNavController(viewController: EventListViewController(), title: "Events", imageName: ""),
             createNavController(viewController: MessageViewController(), title: "Messages", imageName: ""),
