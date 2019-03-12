@@ -3,17 +3,15 @@ import CloudKit
 
 class MessageViewController: UITableViewController {
     
-    let cellId = "cellId"
+    fileprivate let cellId = "messageCellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Messages"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(sendMessage))
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.tableFooterView = UIView()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

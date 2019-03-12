@@ -1,94 +1,84 @@
-//
-//  CreateEventViewController.swift
-//  Swift Meetup
-//
-//  Created by Caleb Wells on 3/11/19.
-//  Copyright © 2019 Caleb Wells. All rights reserved.
-//
-
 import UIKit
 import EventKit
 
 class CreateEventViewController: UIViewController {
     
     let dateFormatter = DateFormatter()
-
-    let eventTitle = UITextField()
-    let eventNotes = UITextField()
-    let eventStart = UITextField()
-    let eventEnd = UITextField()
-    let button = UIButton()
+    let stackView = UIStackView()
+    let button = Button()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0, green: 0.4793452024, blue: 0.9990863204, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
-        eventTitle.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        navigationItem.title = "Create Event"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
-        eventTitle.placeholder = "Entre title"
-        
-        let textFields = [eventTitle, eventNotes, eventStart, eventEnd]
-        
-        for item in textFields {
-            item.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            item.placeholder = "Something"
-            item.borderStyle = .roundedRect
-            
-            item.translatesAutoresizingMaskIntoConstraints = false
-            item.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        }
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismissView))
         
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        createSubviews()
+    }
+    
+    func createSubviews() {
+        button.setTitle("Create event", for: .normal)
+        button.addTarget(self, action: #selector(handleCreateEvent), for: .touchUpInside)
         
-        button.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
-        button.addTarget(self, action: #selector(buttonUpdateCal), for: .touchUpInside)
-        
-        let stackView = UIStackView(arrangedSubviews: [eventTitle, eventNotes, eventStart, eventEnd, button])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        stackView.spacing = 24
+        stackView.distribution = .equalCentering
         view.addSubview(stackView)
         
+        for placeholderText in ["Title","Notes","Start","End"] {
+            let createEventTextField = TextField()
+            createEventTextField.placeholder = placeholderText
+            stackView.addArrangedSubview(createEventTextField)
+        }
+        
+        stackView.addArrangedSubview(button)
+        
         NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             stackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            stackView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            stackView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            stackView.heightAnchor.constraint(equalToConstant: 360),
+            stackView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -80)
         ])
     }
     
-    @objc func buttonUpdateCal() {
+    @objc func handleCreateEvent() {
+        print("Create event")
         let eventStore: EKEventStore = EKEventStore()
-        eventStore.requestAccess(to: .event) {(granted, error) in
-            if (granted) && (error == nil){
-                print("granted \(granted)")
-                print("error \(error)")
-                
-                let event: EKEvent = EKEvent(eventStore: eventStore)
-                event.title = self.eventTitle.text!
-                event.notes = self.eventNotes.text!
-                
-                let evtStartDate = self.dateFormatter.date(from: self.eventStart.text!)
-                event.startDate = evtStartDate!
-                
-                let evtEndDate   = self.dateFormatter.date(from: self.eventEnd.text!)
-                event.endDate    = evtEndDate!
-                
-                event.calendar   = eventStore.defaultCalendarForNewEvents
-                
-                do {
-                    try eventStore.save(event, span: .thisEvent)
-                }
-                catch let error as NSError{
-                    print("error: \(error)")
-                }
-                print("Save Event")
-                print("Date: \(Date())")
-                
-            } else {
-                print("Error: \(error)")
+        eventStore.requestAccess(to: .event) { (granted, error) in
+            DispatchQueue.main.async {
+//                if granted && error == nil {
+//                    let event: EKEvent = EKEvent(eventStore: eventStore)
+//                    event.title = eventTitle.text!
+//                    event.notes = eventNotes.text!
+//
+//                    let evtStartDate = self.dateFormatter.date(from: self.eventStart.text!)
+//                    event.startDate = evtStartDate!
+//
+//                    let evtEndDate = self.dateFormatter.date(from: self.eventEnd.text!)
+//                    event.endDate = evtEndDate!
+//                    event.calendar = eventStore.defaultCalendarForNewEvents
+//
+//                    do {
+//                        try eventStore.save(event, span: .thisEvent)
+//                    } catch let error as NSError{
+//                        print("error: \(error)")
+//                    }
+//                    print("Save Event")
+//                    print("Date: \(Date())")
+//
+//                } else {
+//                    print("Error: \(error)")
+//                }
             }
         }
+    }
+    
+    @objc func handleDismissView() {
+        dismiss(animated: true, completion: nil)
     }
 }
