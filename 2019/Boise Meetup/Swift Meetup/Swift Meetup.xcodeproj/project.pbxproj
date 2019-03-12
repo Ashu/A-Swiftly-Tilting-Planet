@@ -17,6 +17,7 @@
 		00CA893E2237838E00AFB388 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CA893D2237838E00AFB388 /* TextField.swift */; };
 		00CA8940223783D700AFB388 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CA893F223783D700AFB388 /* Button.swift */; };
 		00CA89422237851F00AFB388 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CA89412237851F00AFB388 /* EventsListViewController.swift */; };
+		00CA894422378A1C00AFB388 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CA894322378A1C00AFB388 /* UserProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		00CA893D2237838E00AFB388 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		00CA893F223783D700AFB388 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		00CA89412237851F00AFB388 /* EventsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
+		00CA894322378A1C00AFB388 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				0028006E2224D4B800BC120A /* MessageViewController.swift */,
 				00CA89412237851F00AFB388 /* EventsListViewController.swift */,
 				003E563122373C5000A7EC5B /* CreateEventViewController.swift */,
+				00CA894322378A1C00AFB388 /* UserProfileViewController.swift */,
 				00CA893D2237838E00AFB388 /* TextField.swift */,
 				00CA893F223783D700AFB388 /* Button.swift */,
 				002800732224D4BA00BC120A /* Assets.xcassets */,
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0028006F2224D4B800BC120A /* MessageViewController.swift in Sources */,
+				00CA894422378A1C00AFB388 /* UserProfileViewController.swift in Sources */,
 				00CA8940223783D700AFB388 /* Button.swift in Sources */,
 				00CA893C2237833600AFB388 /* TabBarController.swift in Sources */,
 				0028006D2224D4B800BC120A /* AppDelegate.swift in Sources */,
