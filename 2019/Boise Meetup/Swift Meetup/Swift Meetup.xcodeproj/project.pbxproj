@@ -11,6 +11,8 @@
 		0028006F2224D4B800BC120A /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028006E2224D4B800BC120A /* MessageViewController.swift */; };
 		002800742224D4BA00BC120A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 002800732224D4BA00BC120A /* Assets.xcassets */; };
 		002800772224D4BA00BC120A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002800752224D4BA00BC120A /* LaunchScreen.storyboard */; };
+		003E563022372A9600A7EC5B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003E562F22372A9600A7EC5B /* CloudKit.framework */; };
+		003E563222373C5000A7EC5B /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E563122373C5000A7EC5B /* CreateEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,9 @@
 		002800732224D4BA00BC120A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		002800762224D4BA00BC120A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		002800782224D4BA00BC120A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003E562D22372A9300A7EC5B /* Swift Meetup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Swift Meetup.entitlements"; sourceTree = "<group>"; };
+		003E562F22372A9600A7EC5B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		003E563122373C5000A7EC5B /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003E563022372A9600A7EC5B /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +44,7 @@
 			children = (
 				0028006B2224D4B800BC120A /* Swift Meetup */,
 				0028006A2224D4B800BC120A /* Products */,
+				003E562E22372A9600A7EC5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +59,23 @@
 		0028006B2224D4B800BC120A /* Swift Meetup */ = {
 			isa = PBXGroup;
 			children = (
+				003E562D22372A9300A7EC5B /* Swift Meetup.entitlements */,
 				0028006C2224D4B800BC120A /* AppDelegate.swift */,
 				0028006E2224D4B800BC120A /* MessageViewController.swift */,
+				003E563122373C5000A7EC5B /* CreateEventViewController.swift */,
 				002800732224D4BA00BC120A /* Assets.xcassets */,
 				002800752224D4BA00BC120A /* LaunchScreen.storyboard */,
 				002800782224D4BA00BC120A /* Info.plist */,
 			);
 			path = "Swift Meetup";
+			sourceTree = "<group>";
+		};
+		003E562E22372A9600A7EC5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				003E562F22372A9600A7EC5B /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +110,14 @@
 				TargetAttributes = {
 					002800682224D4B800BC120A = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -133,6 +158,7 @@
 			files = (
 				0028006F2224D4B800BC120A /* MessageViewController.swift in Sources */,
 				0028006D2224D4B800BC120A /* AppDelegate.swift in Sources */,
+				003E563222373C5000A7EC5B /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Swift Meetup/Swift Meetup.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
 				INFOPLIST_FILE = "Swift Meetup/Info.plist";
@@ -288,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Swift Meetup/Swift Meetup.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NUGZ4GWE;
 				INFOPLIST_FILE = "Swift Meetup/Info.plist";
