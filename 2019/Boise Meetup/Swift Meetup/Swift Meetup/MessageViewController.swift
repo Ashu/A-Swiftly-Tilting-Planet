@@ -4,6 +4,8 @@ import CloudKit
 class MessageViewController: UITableViewController, UITextFieldDelegate {
     
     fileprivate let cellId = "messageCellId"
+    var messages = [CKRecord]()
+    let refresh = UIRefreshControl()
     let messageTextField = TextField()
     
     var bottomConstraint: NSLayoutConstraint?
@@ -24,16 +26,39 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         setupInputComponents()
         
+        refresh.attributedTitle = NSAttributedString(string: "Pull to load new messages!")
+        refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.tableView.addSubview(refresh)
+        
+        loadData()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return messages.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
+        
+        if messages.count == 0 {
+            return cell
+        }
+        
+        let message = messages[indexPath.row]
+        
+        if let messageContent = message["content"] as? String {
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "MM/dd/hh/mm"
+            let dateString = dateFormat.string(from: message.creationDate!)
+            
+            cell.textLabel?.text = messageContent
+            cell.detailTextLabel?.text = dateString
+        }
+        
+        
         return cell
     }
     
@@ -96,6 +121,7 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
         }
         textField.resignFirstResponder()
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return true
@@ -109,12 +135,35 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
             let publicData = CKContainer.default().publicCloudDatabase
             publicData.save(newMessage, completionHandler: { (record, error) in
                 if error == nil {
-                    print("Message saved.")
+                    DispatchQueue.main.async {
+                        self.tableView.beginUpdates()
+                        self.messages.insert(newMessage, at: 0)
+                        let indexPath = IndexPath(row: 0, section: 0)
+                        self.tableView.insertRows(at: [indexPath], with: .top)
+                        self.tableView.endUpdates()
+                    }
                 } else {
                     print("Let's make an alert soon...")
                 }
             })
             messageTextField.text = ""
+        }
+    }
+    
+    @objc func loadData() {
+        messages = [CKRecord]()
+        
+        let publicData = CKContainer.default().publicCloudDatabase
+        let query = CKQuery(recordType: "Message", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil))
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        publicData.perform(query, inZoneWith: nil) { (results: [CKRecord]?, error) in
+            if let messages = results {
+                self.messages = messages
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.refresh.endRefreshing()
+                }
+            }
         }
     }
 }
