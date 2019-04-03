@@ -146,6 +146,7 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
                 }
             })
             messageTextField.text = ""
+            messageTextField.endEditing(true)
         }
     }
     
