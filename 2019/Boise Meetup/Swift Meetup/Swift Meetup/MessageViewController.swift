@@ -10,7 +10,6 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
     
     var bottomConstraint: NSLayoutConstraint?
     var keyboardHeight: CGFloat!
-    //let initialBottomConstraint = 0
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(
@@ -58,7 +57,6 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
             cell.detailTextLabel?.text = dateString
         }
         
-        
         return cell
     }
     
@@ -87,7 +85,6 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
 
         NSLayoutConstraint.activate([
             containerView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            //containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             containerView.heightAnchor.constraint(equalToConstant: 50),
             containerView.widthAnchor.constraint(equalTo: view.widthAnchor),
             
