@@ -38,7 +38,8 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
         return messages.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
         
@@ -50,11 +51,12 @@ class MessageViewController: UITableViewController, UITextFieldDelegate {
         
         if let messageContent = message["content"] as? String {
             let dateFormat = DateFormatter()
-            dateFormat.dateFormat = "MM/dd/hh/mm"
+            dateFormat.dateFormat = "MM/dd"
             let dateString = dateFormat.string(from: message.creationDate!)
             
             cell.textLabel?.text = messageContent
-            cell.detailTextLabel?.text = dateString
+            cell.textLabel?.numberOfLines = 0
+            cell.detailTextLabel?.text = "Sent by \(UIDevice.current.name), on \(dateString)"
         }
         
         return cell
