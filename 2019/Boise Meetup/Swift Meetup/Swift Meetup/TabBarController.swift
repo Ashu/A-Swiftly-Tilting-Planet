@@ -6,9 +6,9 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
                 
         viewControllers = [
-            createNavController(viewController: EventListViewController(), title: "Events", imageName: ""),
-            createNavController(viewController: MessageViewController(), title: "Messages", imageName: ""),
-            createNavController(viewController: UserProfileViewController(), title: "Profile", imageName: "")
+            createNavController(viewController: EventListViewController(), title: "Events", imageName: "swift"),
+            createNavController(viewController: MessageViewController(), title: "Messages", imageName: "messages"),
+            createNavController(viewController: UserProfileViewController(), title: "Profile", imageName: "settings")
         ]
     }
     
