@@ -8,7 +8,7 @@ class EventListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(sendMessage))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentCreateEventView))
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView()
@@ -26,7 +26,7 @@ class EventListViewController: UITableViewController {
         return cell
     }
     
-    @objc func sendMessage() {
+    @objc func presentCreateEventView() {
         print("New ")
         let createView = UINavigationController(rootViewController: CreateEventViewController())
         present(createView, animated: true, completion: nil)

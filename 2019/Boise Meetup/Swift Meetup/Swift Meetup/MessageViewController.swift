@@ -2,7 +2,9 @@ import UIKit
 import CloudKit
 
 class MessageViewController: UITableViewController, UITextViewDelegate {
-
+    
+    let name = UIDevice.current.name
+    
     fileprivate let cellId = "messageCellId"
     var messages = [CKRecord]()
     let refresh = UIRefreshControl()
@@ -54,7 +56,7 @@ class MessageViewController: UITableViewController, UITextViewDelegate {
 
             cell.textLabel?.text = messageContent
             cell.textLabel?.numberOfLines = 0
-            cell.detailTextLabel?.text = "Sent by \(UIDevice.current.name), on \(dateString)"
+            cell.detailTextLabel?.text = "Sent by \(name), on \(dateString)"
         }
 
         return cell
