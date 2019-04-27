@@ -25,7 +25,7 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Hello touch")
         
-        let jump = SKAction.move(by: CGVector(dx: 0, dy: 300), duration: 0.5)
+        let jump = SKAction.move(by: CGVector(dx: 0, dy: 380), duration: 0.5)
         player.run(jump)
         
         scoreNumber += 1
