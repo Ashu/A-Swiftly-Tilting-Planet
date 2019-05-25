@@ -11,6 +11,8 @@ import NotificationCenter
 
 @objc(TodayViewController)
 class TodayViewController: UITableViewController, NCWidgetProviding {
+    
+    static let kCustomURLScheme = "today.appURL://"
         
     let id = "id"
     
@@ -23,6 +25,16 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         
         tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: id)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = TodayHeader()
+        
+        return header.view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 110
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,11 +54,23 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\n=== Hello, cell at \(indexPath.row) ===\n")
+        
+        let myAppUrl = URL(string: TodayViewController.kCustomURLScheme)!
+        extensionContext?.open(myAppUrl, completionHandler: { (success) in
+            if (!success) {
+                //
+            }
+        })
+    }
+    
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .compact {
             self.preferredContentSize = maxSize
+            print("\n== \(maxSize.height) ==\n")
         } else if activeDisplayMode == .expanded {
-            self.preferredContentSize = CGSize(width: maxSize.width, height: 300)
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 394)
         }
     }
     
