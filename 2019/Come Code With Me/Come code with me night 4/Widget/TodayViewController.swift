@@ -9,21 +9,45 @@
 import UIKit
 import NotificationCenter
 
-@objc
-class TodayViewController: UIViewController, NCWidgetProviding {
+@objc(TodayViewController)
+class TodayViewController: UITableViewController, NCWidgetProviding {
         
     let id = "id"
     
-    var list = ["Steve", "Tim"]
-    
-//    override func loadView() {
-//        view = UIView(frame:CGRect(x: 0.0, y: 0, width: 320.0, height: 200.0))
-//    }
+    var list = ["Steve", "Tim", "Bob"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.preferredContentSize = CGSize(width: 0, height: 200)
+        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        
+        tableView.tableFooterView = UIView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: id)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: id)
+
+        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.font = .boldSystemFont(ofSize: 27)
+
+        cell.detailTextLabel?.text = "Some detail text for testing the detail taxt label in the table view cell."
+        cell.detailTextLabel?.numberOfLines = 3
+
+        return cell
+    }
+    
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .compact {
+            self.preferredContentSize = maxSize
+        } else if activeDisplayMode == .expanded {
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 300)
+        }
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -35,5 +59,4 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         completionHandler(NCUpdateResult.newData)
     }
-    
 }
