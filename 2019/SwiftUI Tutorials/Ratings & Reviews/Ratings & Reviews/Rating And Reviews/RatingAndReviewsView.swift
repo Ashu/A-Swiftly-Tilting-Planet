@@ -1,25 +1,11 @@
 import SwiftUI
 
 struct RatingAndReviewsView: View {
-    let ratingLineCount = [1,2,3,4,5]
+    @State private var ratingsTitle = "Rating & Reviews"
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Rating & Reviews")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    
-                Spacer()
-                
-                Button(action: {
-                    //
-                    }) {
-                        Text("See All")
-                            .fontWeight(.heavy)
-                    }
-            }
-            .padding(.horizontal)
+            TitleAndButtonHStackView(title: $ratingsTitle)
             
             HStack(alignment: .top) {
                 NumberRatingView()
