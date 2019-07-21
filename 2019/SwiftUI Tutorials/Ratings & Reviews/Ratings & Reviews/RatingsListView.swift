@@ -47,15 +47,17 @@ struct RatingsListView: View {
                         Spacer()
                         Text("Sort by Most Helpful")
                         Image(systemName: "chevron.compact.down")
-                    }
-                        .padding(.trailing)
+                    }.padding(.trailing)
                 })
                     .actionSheet(isPresented: $isPresented, content: {
                         self.actionSheet
                 })
                 
+                RatingBoxView()
+                RatingBoxView()
+                RatingBoxView()
             }
-        }.navigationBarTitle("Rating & Reviews")
+        }.navigationBarTitle("", displayMode: .inline)
     }
 }
 

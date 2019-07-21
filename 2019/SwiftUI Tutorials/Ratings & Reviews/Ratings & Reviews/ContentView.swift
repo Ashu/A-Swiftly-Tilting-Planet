@@ -16,6 +16,17 @@ struct ContentView: View {
                 TitleAndButtonHStackView(title: $title, isButtonShowing: $isButtonShowing)
                 
                 RatingAndReviewsView()
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        RatingBoxView()
+                            .frame(width: 370, height: 260, alignment: .leading)
+                        RatingBoxView()
+                            .frame(width: 370, height: 260, alignment: .leading)
+                        RatingBoxView()
+                            .frame(width: 370, height: 260, alignment: .leading)
+                    }
+                }
             }
         }
     }
@@ -28,3 +39,12 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 #endif
+
+
+struct Review {
+    let rating: String
+    let title: String
+    let review: String
+    let date: String
+    let userName: String
+}
