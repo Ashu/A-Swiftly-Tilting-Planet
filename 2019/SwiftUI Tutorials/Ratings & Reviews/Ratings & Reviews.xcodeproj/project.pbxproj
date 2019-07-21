@@ -14,6 +14,10 @@
 		006D1B6822E2BCE700D28659 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D1B6722E2BCE700D28659 /* Preview Assets.xcassets */; };
 		006D1B6B22E2BCE700D28659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D1B6922E2BCE700D28659 /* LaunchScreen.storyboard */; };
 		006D1B7322E2D60100D28659 /* RatingAndReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D1B7222E2D60100D28659 /* RatingAndReviewsView.swift */; };
+		007AF25322E4D73800C156B9 /* NumberRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25222E4D73800C156B9 /* NumberRatingView.swift */; };
+		007AF25522E4D78200C156B9 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25422E4D78200C156B9 /* StarView.swift */; };
+		007AF25722E4D7C800C156B9 /* BottomLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25622E4D7C800C156B9 /* BottomLineView.swift */; };
+		007AF25922E4D80C00C156B9 /* RatingLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25822E4D80C00C156B9 /* RatingLineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		006D1B6A22E2BCE700D28659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		006D1B6C22E2BCE700D28659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		006D1B7222E2D60100D28659 /* RatingAndReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAndReviewsView.swift; sourceTree = "<group>"; };
+		007AF25222E4D73800C156B9 /* NumberRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRatingView.swift; sourceTree = "<group>"; };
+		007AF25422E4D78200C156B9 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		007AF25622E4D7C800C156B9 /* BottomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineView.swift; sourceTree = "<group>"; };
+		007AF25822E4D80C00C156B9 /* RatingLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingLineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +69,7 @@
 				006D1B5E22E2BCE600D28659 /* AppDelegate.swift */,
 				006D1B6022E2BCE600D28659 /* SceneDelegate.swift */,
 				006D1B6222E2BCE600D28659 /* ContentView.swift */,
-				006D1B7222E2D60100D28659 /* RatingAndReviewsView.swift */,
+				007AF25122E4D6FF00C156B9 /* Rating And Reviews */,
 				006D1B6422E2BCE700D28659 /* Assets.xcassets */,
 				006D1B6922E2BCE700D28659 /* LaunchScreen.storyboard */,
 				006D1B6C22E2BCE700D28659 /* Info.plist */,
@@ -76,6 +84,18 @@
 				006D1B6722E2BCE700D28659 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		007AF25122E4D6FF00C156B9 /* Rating And Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				006D1B7222E2D60100D28659 /* RatingAndReviewsView.swift */,
+				007AF25222E4D73800C156B9 /* NumberRatingView.swift */,
+				007AF25422E4D78200C156B9 /* StarView.swift */,
+				007AF25622E4D7C800C156B9 /* BottomLineView.swift */,
+				007AF25822E4D80C00C156B9 /* RatingLineView.swift */,
+			);
+			path = "Rating And Reviews";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +169,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007AF25522E4D78200C156B9 /* StarView.swift in Sources */,
 				006D1B5F22E2BCE600D28659 /* AppDelegate.swift in Sources */,
 				006D1B7322E2D60100D28659 /* RatingAndReviewsView.swift in Sources */,
+				007AF25722E4D7C800C156B9 /* BottomLineView.swift in Sources */,
+				007AF25322E4D73800C156B9 /* NumberRatingView.swift in Sources */,
 				006D1B6122E2BCE600D28659 /* SceneDelegate.swift in Sources */,
 				006D1B6322E2BCE600D28659 /* ContentView.swift in Sources */,
+				007AF25922E4D80C00C156B9 /* RatingLineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
