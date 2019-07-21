@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct RatingAndReviewsView: View {
+    let ratingLineCount = [1,2,3,4,5]
+    
     var body: some View {
         VStack {
             HStack {
@@ -40,8 +42,8 @@ struct RatingAndReviewsView: View {
                     Text("270,000 Ratings")
                         .fontWeight(.heavy)
                         .foregroundColor(Color.secondary)
-                        
                 }
+                    .padding(.top, 4)
             }
                 .padding(.horizontal)
         }

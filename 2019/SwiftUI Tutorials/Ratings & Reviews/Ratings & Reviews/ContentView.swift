@@ -65,30 +65,22 @@ struct StarView: View {
 // Make a new .swift file!
 struct BottomLineView: View {
     var body: some View {
-        Path { path in
-            path.move(to: CGPoint(x: 0, y: 0))
-            path.addRect(CGRect(x: 0, y: 0, width: 200, height: 10))
-        }
-            .fill(Color.secondary)
-            .cornerRadius(12)
+        Capsule()
+            .frame(width: 200, height: 4)
+            .foregroundColor(.secondary)
     }
 }
 
 // Make a new .swift file!
 struct RatingLineView: View {
-    var ratings = [8, 12, 27, 42, 72, 87, 112, 120, 133]
+    var ratings = [8, 12, 27, 42, 72, 87, 94, 100, 112, 120, 127, 133]
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .trailing) {
             BottomLineView()
             
-            Path { path in
-                path.move(to: CGPoint(x: 0, y: 0))
-                path.addRect(CGRect(x: 0, y: 0, width: ratings.randomElement()!, height: 4))
-            }
-                .cornerRadius(12)
-                .frame(width: 200.0)
+            Capsule()
+                .frame(width: CGFloat(ratings.randomElement()!), height: 4)
         }
-            .frame(height: 4)
     }
 }
