@@ -22,11 +22,3 @@ struct TitleAndButtonHStackView: View {
             .padding(.horizontal)
     }
 }
-
-#if DEBUG
-//struct TitleAndButtonHStackView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TitleAndButtonHStackView()
-//    }
-//}
-#endif

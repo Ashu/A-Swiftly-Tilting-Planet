@@ -9,11 +9,11 @@ struct AppDetailView: View {
             VStack {
                 AppImageTitleAndButtonsView()
                 
-                Text("Get ready for an exhilarating virus hunt!\n💉 Use your puzzle skills to eliminate pesky viruses!")
-                    .lineLimit(200)
+                AppRatingChartsAndAgeView()
                 
-                Divider()
-                    .padding()
+                AppScreenShotView()
+                
+                AppDescriptionView()
                 
                 TitleAndButtonHStackView(title: $title, isButtonShowing: $isButtonShowing)
                 

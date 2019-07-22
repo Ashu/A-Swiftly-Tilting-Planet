@@ -57,7 +57,7 @@ struct RatingsListView: View {
                 RatingBoxView()
                 RatingBoxView()
             }
-        }.navigationBarTitle("", displayMode: .inline)
+        }.navigationBarTitle("Rating & Reviews", displayMode: .large)
     }
 }
 

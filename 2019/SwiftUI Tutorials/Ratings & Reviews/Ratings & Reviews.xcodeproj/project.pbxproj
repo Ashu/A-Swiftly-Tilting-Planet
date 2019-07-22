@@ -24,6 +24,9 @@
 		00FF015E22E52CF200AEA27A /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF015D22E52CF200AEA27A /* AppDetailView.swift */; };
 		00FF016022E545F200AEA27A /* RatingsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF015F22E545F200AEA27A /* RatingsScrollView.swift */; };
 		00FF016222E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */; };
+		00FF016422E552D600AEA27A /* AppScreenShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016322E552D600AEA27A /* AppScreenShotView.swift */; };
+		00FF016622E5544500AEA27A /* AppRatingChartsAndAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016522E5544500AEA27A /* AppRatingChartsAndAgeView.swift */; };
+		00FF016822E555F400AEA27A /* AppDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016722E555F400AEA27A /* AppDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		00FF015D22E52CF200AEA27A /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
 		00FF015F22E545F200AEA27A /* RatingsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsScrollView.swift; sourceTree = "<group>"; };
 		00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageTitleAndButtonsView.swift; sourceTree = "<group>"; };
+		00FF016322E552D600AEA27A /* AppScreenShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenShotView.swift; sourceTree = "<group>"; };
+		00FF016522E5544500AEA27A /* AppRatingChartsAndAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatingChartsAndAgeView.swift; sourceTree = "<group>"; };
+		00FF016722E555F400AEA27A /* AppDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +84,10 @@
 		006D1B5D22E2BCE600D28659 /* Ratings & Reviews */ = {
 			isa = PBXGroup;
 			children = (
-				006D1B5E22E2BCE600D28659 /* AppDelegate.swift */,
-				006D1B6022E2BCE600D28659 /* SceneDelegate.swift */,
+				00FF016A22E5587F00AEA27A /* Delegates */,
 				006D1B6222E2BCE600D28659 /* ContentView.swift */,
-				00FF015D22E52CF200AEA27A /* AppDetailView.swift */,
-				00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */,
 				007AF25A22E4D92700C156B9 /* TitleAndButtonHStackView.swift */,
+				00FF016922E5566900AEA27A /* App Detail View */,
 				007AF25122E4D6FF00C156B9 /* Rating And Reviews */,
 				006D1B6422E2BCE700D28659 /* Assets.xcassets */,
 				006D1B6922E2BCE700D28659 /* LaunchScreen.storyboard */,
@@ -114,6 +118,27 @@
 				00FF015F22E545F200AEA27A /* RatingsScrollView.swift */,
 			);
 			path = "Rating And Reviews";
+			sourceTree = "<group>";
+		};
+		00FF016922E5566900AEA27A /* App Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				00FF015D22E52CF200AEA27A /* AppDetailView.swift */,
+				00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */,
+				00FF016522E5544500AEA27A /* AppRatingChartsAndAgeView.swift */,
+				00FF016322E552D600AEA27A /* AppScreenShotView.swift */,
+				00FF016722E555F400AEA27A /* AppDescriptionView.swift */,
+			);
+			path = "App Detail View";
+			sourceTree = "<group>";
+		};
+		00FF016A22E5587F00AEA27A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				006D1B5E22E2BCE600D28659 /* AppDelegate.swift */,
+				006D1B6022E2BCE600D28659 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,15 +212,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00FF016622E5544500AEA27A /* AppRatingChartsAndAgeView.swift in Sources */,
 				00FF016022E545F200AEA27A /* RatingsScrollView.swift in Sources */,
 				007AF25522E4D78200C156B9 /* StarView.swift in Sources */,
 				00FF015E22E52CF200AEA27A /* AppDetailView.swift in Sources */,
 				0072180122E4F2950037190F /* RatingBoxView.swift in Sources */,
 				006D1B5F22E2BCE600D28659 /* AppDelegate.swift in Sources */,
+				00FF016422E552D600AEA27A /* AppScreenShotView.swift in Sources */,
 				006D1B7322E2D60100D28659 /* RatingAndReviewsView.swift in Sources */,
 				007AF25722E4D7C800C156B9 /* BottomLineView.swift in Sources */,
 				00FF016222E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift in Sources */,
 				007217FF22E4DEF80037190F /* RatingsListView.swift in Sources */,
+				00FF016822E555F400AEA27A /* AppDescriptionView.swift in Sources */,
 				007AF25B22E4D92700C156B9 /* TitleAndButtonHStackView.swift in Sources */,
 				007AF25322E4D73800C156B9 /* NumberRatingView.swift in Sources */,
 				006D1B6122E2BCE600D28659 /* SceneDelegate.swift in Sources */,
