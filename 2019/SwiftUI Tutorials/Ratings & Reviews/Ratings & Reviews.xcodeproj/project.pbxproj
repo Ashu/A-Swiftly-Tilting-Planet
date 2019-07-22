@@ -21,6 +21,9 @@
 		007AF25722E4D7C800C156B9 /* BottomLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25622E4D7C800C156B9 /* BottomLineView.swift */; };
 		007AF25922E4D80C00C156B9 /* RatingLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25822E4D80C00C156B9 /* RatingLineView.swift */; };
 		007AF25B22E4D92700C156B9 /* TitleAndButtonHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25A22E4D92700C156B9 /* TitleAndButtonHStackView.swift */; };
+		00FF015E22E52CF200AEA27A /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF015D22E52CF200AEA27A /* AppDetailView.swift */; };
+		00FF016022E545F200AEA27A /* RatingsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF015F22E545F200AEA27A /* RatingsScrollView.swift */; };
+		00FF016222E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		007AF25622E4D7C800C156B9 /* BottomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineView.swift; sourceTree = "<group>"; };
 		007AF25822E4D80C00C156B9 /* RatingLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingLineView.swift; sourceTree = "<group>"; };
 		007AF25A22E4D92700C156B9 /* TitleAndButtonHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndButtonHStackView.swift; sourceTree = "<group>"; };
+		00FF015D22E52CF200AEA27A /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
+		00FF015F22E545F200AEA27A /* RatingsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsScrollView.swift; sourceTree = "<group>"; };
+		00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageTitleAndButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +81,9 @@
 				006D1B5E22E2BCE600D28659 /* AppDelegate.swift */,
 				006D1B6022E2BCE600D28659 /* SceneDelegate.swift */,
 				006D1B6222E2BCE600D28659 /* ContentView.swift */,
+				00FF015D22E52CF200AEA27A /* AppDetailView.swift */,
+				00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */,
 				007AF25A22E4D92700C156B9 /* TitleAndButtonHStackView.swift */,
-				007217FE22E4DEF80037190F /* RatingsListView.swift */,
 				007AF25122E4D6FF00C156B9 /* Rating And Reviews */,
 				006D1B6422E2BCE700D28659 /* Assets.xcassets */,
 				006D1B6922E2BCE700D28659 /* LaunchScreen.storyboard */,
@@ -103,6 +110,8 @@
 				007AF25622E4D7C800C156B9 /* BottomLineView.swift */,
 				007AF25822E4D80C00C156B9 /* RatingLineView.swift */,
 				0072180022E4F2950037190F /* RatingBoxView.swift */,
+				007217FE22E4DEF80037190F /* RatingsListView.swift */,
+				00FF015F22E545F200AEA27A /* RatingsScrollView.swift */,
 			);
 			path = "Rating And Reviews";
 			sourceTree = "<group>";
@@ -178,11 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00FF016022E545F200AEA27A /* RatingsScrollView.swift in Sources */,
 				007AF25522E4D78200C156B9 /* StarView.swift in Sources */,
+				00FF015E22E52CF200AEA27A /* AppDetailView.swift in Sources */,
 				0072180122E4F2950037190F /* RatingBoxView.swift in Sources */,
 				006D1B5F22E2BCE600D28659 /* AppDelegate.swift in Sources */,
 				006D1B7322E2D60100D28659 /* RatingAndReviewsView.swift in Sources */,
 				007AF25722E4D7C800C156B9 /* BottomLineView.swift in Sources */,
+				00FF016222E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift in Sources */,
 				007217FF22E4DEF80037190F /* RatingsListView.swift in Sources */,
 				007AF25B22E4D92700C156B9 /* TitleAndButtonHStackView.swift in Sources */,
 				007AF25322E4D73800C156B9 /* NumberRatingView.swift in Sources */,
