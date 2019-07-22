@@ -19,12 +19,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 #endif
-
-
-struct Review {
-    let rating: String
-    let title: String
-    let review: String
-    let date: String
-    let userName: String
-}

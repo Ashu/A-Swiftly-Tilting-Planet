@@ -21,12 +21,16 @@
 		007AF25722E4D7C800C156B9 /* BottomLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25622E4D7C800C156B9 /* BottomLineView.swift */; };
 		007AF25922E4D80C00C156B9 /* RatingLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25822E4D80C00C156B9 /* RatingLineView.swift */; };
 		007AF25B22E4D92700C156B9 /* TitleAndButtonHStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AF25A22E4D92700C156B9 /* TitleAndButtonHStackView.swift */; };
+		007F1B6722E58C3700993142 /* AppCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F1B6622E58C3700993142 /* AppCellView.swift */; };
+		00E0FF6E22E577E500155611 /* DeveloperAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E0FF6D22E577E500155611 /* DeveloperAppsView.swift */; };
+		00E0FF7022E5782C00155611 /* DeveloperAppsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E0FF6F22E5782C00155611 /* DeveloperAppsButtonView.swift */; };
 		00FF015E22E52CF200AEA27A /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF015D22E52CF200AEA27A /* AppDetailView.swift */; };
 		00FF016022E545F200AEA27A /* RatingsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF015F22E545F200AEA27A /* RatingsScrollView.swift */; };
 		00FF016222E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */; };
 		00FF016422E552D600AEA27A /* AppScreenShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016322E552D600AEA27A /* AppScreenShotView.swift */; };
 		00FF016622E5544500AEA27A /* AppRatingChartsAndAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016522E5544500AEA27A /* AppRatingChartsAndAgeView.swift */; };
 		00FF016822E555F400AEA27A /* AppDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016722E555F400AEA27A /* AppDescriptionView.swift */; };
+		00FF016C22E55F8C00AEA27A /* MoreAppScreenShotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF016B22E55F8C00AEA27A /* MoreAppScreenShotsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,12 +50,16 @@
 		007AF25622E4D7C800C156B9 /* BottomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineView.swift; sourceTree = "<group>"; };
 		007AF25822E4D80C00C156B9 /* RatingLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingLineView.swift; sourceTree = "<group>"; };
 		007AF25A22E4D92700C156B9 /* TitleAndButtonHStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndButtonHStackView.swift; sourceTree = "<group>"; };
+		007F1B6622E58C3700993142 /* AppCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellView.swift; sourceTree = "<group>"; };
+		00E0FF6D22E577E500155611 /* DeveloperAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperAppsView.swift; sourceTree = "<group>"; };
+		00E0FF6F22E5782C00155611 /* DeveloperAppsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperAppsButtonView.swift; sourceTree = "<group>"; };
 		00FF015D22E52CF200AEA27A /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
 		00FF015F22E545F200AEA27A /* RatingsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsScrollView.swift; sourceTree = "<group>"; };
 		00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageTitleAndButtonsView.swift; sourceTree = "<group>"; };
 		00FF016322E552D600AEA27A /* AppScreenShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenShotView.swift; sourceTree = "<group>"; };
 		00FF016522E5544500AEA27A /* AppRatingChartsAndAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatingChartsAndAgeView.swift; sourceTree = "<group>"; };
 		00FF016722E555F400AEA27A /* AppDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDescriptionView.swift; sourceTree = "<group>"; };
+		00FF016B22E55F8C00AEA27A /* MoreAppScreenShotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreAppScreenShotsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +135,11 @@
 				00FF016122E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift */,
 				00FF016522E5544500AEA27A /* AppRatingChartsAndAgeView.swift */,
 				00FF016322E552D600AEA27A /* AppScreenShotView.swift */,
+				00FF016B22E55F8C00AEA27A /* MoreAppScreenShotsView.swift */,
 				00FF016722E555F400AEA27A /* AppDescriptionView.swift */,
+				00E0FF6F22E5782C00155611 /* DeveloperAppsButtonView.swift */,
+				00E0FF6D22E577E500155611 /* DeveloperAppsView.swift */,
+				007F1B6622E58C3700993142 /* AppCellView.swift */,
 			);
 			path = "App Detail View";
 			sourceTree = "<group>";
@@ -217,16 +229,20 @@
 				007AF25522E4D78200C156B9 /* StarView.swift in Sources */,
 				00FF015E22E52CF200AEA27A /* AppDetailView.swift in Sources */,
 				0072180122E4F2950037190F /* RatingBoxView.swift in Sources */,
+				007F1B6722E58C3700993142 /* AppCellView.swift in Sources */,
 				006D1B5F22E2BCE600D28659 /* AppDelegate.swift in Sources */,
 				00FF016422E552D600AEA27A /* AppScreenShotView.swift in Sources */,
+				00E0FF6E22E577E500155611 /* DeveloperAppsView.swift in Sources */,
 				006D1B7322E2D60100D28659 /* RatingAndReviewsView.swift in Sources */,
 				007AF25722E4D7C800C156B9 /* BottomLineView.swift in Sources */,
 				00FF016222E54D5C00AEA27A /* AppImageTitleAndButtonsView.swift in Sources */,
 				007217FF22E4DEF80037190F /* RatingsListView.swift in Sources */,
+				00FF016C22E55F8C00AEA27A /* MoreAppScreenShotsView.swift in Sources */,
 				00FF016822E555F400AEA27A /* AppDescriptionView.swift in Sources */,
 				007AF25B22E4D92700C156B9 /* TitleAndButtonHStackView.swift in Sources */,
 				007AF25322E4D73800C156B9 /* NumberRatingView.swift in Sources */,
 				006D1B6122E2BCE600D28659 /* SceneDelegate.swift in Sources */,
+				00E0FF7022E5782C00155611 /* DeveloperAppsButtonView.swift in Sources */,
 				006D1B6322E2BCE600D28659 /* ContentView.swift in Sources */,
 				007AF25922E4D80C00C156B9 /* RatingLineView.swift in Sources */,
 			);

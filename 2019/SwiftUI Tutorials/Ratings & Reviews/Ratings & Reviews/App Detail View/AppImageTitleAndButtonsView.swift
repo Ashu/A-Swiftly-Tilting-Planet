@@ -8,7 +8,7 @@ struct AppImageTitleAndButtonsView: View {
             VStack(alignment: .leading) {
                 Text("App Name")
                 
-                Text("Get app & Stuff")
+                Text("Get apps & Stuff")
                     .foregroundColor(Color.secondary)
                 
                 HStack {

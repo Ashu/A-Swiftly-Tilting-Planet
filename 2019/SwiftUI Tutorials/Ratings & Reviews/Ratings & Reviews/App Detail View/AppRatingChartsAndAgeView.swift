@@ -3,7 +3,7 @@ import SwiftUI
 struct AppRatingChartsAndAgeView: View {
     var body: some View {
         HStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Text("4.8 ★★★★☆")
                     .fontWeight(.heavy)
                     .foregroundColor(.secondary)

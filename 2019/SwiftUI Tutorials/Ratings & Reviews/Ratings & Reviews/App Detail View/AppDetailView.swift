@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AppDetailView: View {
     @State private var title = "Rating & Reviews"
-    @State var isButtonShowing = true
+    @State private var isButtonShowing = true
     
     var body: some View {
         ScrollView {
@@ -13,7 +13,11 @@ struct AppDetailView: View {
                 
                 AppScreenShotView()
                 
+                MoreAppScreenShotsView()
+                
                 AppDescriptionView()
+                
+                DeveloperAppsButtonView()
                 
                 TitleAndButtonHStackView(title: $title, isButtonShowing: $isButtonShowing)
                 
