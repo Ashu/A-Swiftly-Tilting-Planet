@@ -16,6 +16,7 @@ struct AppDescriptionView: View {
         Divider()
             .padding()
         }
+            .padding()
     }
 }
 
