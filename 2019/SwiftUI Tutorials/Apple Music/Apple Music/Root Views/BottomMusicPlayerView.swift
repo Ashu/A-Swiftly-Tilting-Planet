@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct BottomMusicPlayerView: View {
+    @State private var isPresented = false
+    
     var body: some View {
         VStack {
             Spacer()
@@ -25,9 +27,13 @@ struct BottomMusicPlayerView: View {
                     BlurredEffectView()
                         .frame(height: 64)
             )
-                .padding(.bottom, -8)
+                .padding(.bottom, -12)
             Divider()
                 .padding(.bottom, 48)
+        }.onTapGesture {
+            self.isPresented = true
+        }.sheet(isPresented: $isPresented) {
+            NowPlayingView()
         }
     }
 }

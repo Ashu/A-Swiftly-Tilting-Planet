@@ -41,7 +41,7 @@ struct ContentView: View {
             }
             
             BottomMusicPlayerView()
-        }
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 

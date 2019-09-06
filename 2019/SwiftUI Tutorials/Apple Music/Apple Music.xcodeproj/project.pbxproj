@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00837E392322FF1C00DA9343 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00837E382322FF1C00DA9343 /* NowPlayingView.swift */; };
+		00837E3B2322FF8800DA9343 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00837E3A2322FF8800DA9343 /* PlayView.swift */; };
+		00837E3D2322FFB200DA9343 /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00837E3C2322FFB200DA9343 /* VolumeView.swift */; };
+		00837E3F2322FFDB00DA9343 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00837E3E2322FFDB00DA9343 /* OptionsView.swift */; };
+		00837E41232304D500DA9343 /* TimeRemainigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00837E40232304D500DA9343 /* TimeRemainigView.swift */; };
 		009A719722EDF88600F00796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A719622EDF88600F00796 /* AppDelegate.swift */; };
 		009A719922EDF88600F00796 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A719822EDF88600F00796 /* SceneDelegate.swift */; };
 		009A719B22EDF88600F00796 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A719A22EDF88600F00796 /* ContentView.swift */; };
@@ -24,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00837E382322FF1C00DA9343 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
+		00837E3A2322FF8800DA9343 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		00837E3C2322FFB200DA9343 /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
+		00837E3E2322FFDB00DA9343 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		00837E40232304D500DA9343 /* TimeRemainigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRemainigView.swift; sourceTree = "<group>"; };
 		009A719322EDF88600F00796 /* Apple Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		009A719622EDF88600F00796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		009A719822EDF88600F00796 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00837E372322FF0100DA9343 /* Now Playing View */ = {
+			isa = PBXGroup;
+			children = (
+				00837E382322FF1C00DA9343 /* NowPlayingView.swift */,
+				00837E40232304D500DA9343 /* TimeRemainigView.swift */,
+				00837E3A2322FF8800DA9343 /* PlayView.swift */,
+				00837E3C2322FFB200DA9343 /* VolumeView.swift */,
+				00837E3E2322FFDB00DA9343 /* OptionsView.swift */,
+			);
+			path = "Now Playing View";
+			sourceTree = "<group>";
+		};
 		009A718A22EDF88600F00796 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +102,7 @@
 				009A71AE22EE09C900F00796 /* AlbumAndArtistsTextView.swift */,
 				009A71B022EE161C00F00796 /* AlbumGridCellView.swift */,
 				009A71B222EE2AA900F00796 /* AlbumDetailView.swift */,
+				00837E372322FF0100DA9343 /* Now Playing View */,
 				009A719C22EDF88700F00796 /* Assets.xcassets */,
 				009A71A122EDF88700F00796 /* LaunchScreen.storyboard */,
 				009A71A422EDF88700F00796 /* Info.plist */,
@@ -186,12 +209,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00837E3D2322FFB200DA9343 /* VolumeView.swift in Sources */,
 				009A71AF22EE09C900F00796 /* AlbumAndArtistsTextView.swift in Sources */,
 				009A71AD22EE03E100F00796 /* AlbumCoverView.swift in Sources */,
+				00837E3F2322FFDB00DA9343 /* OptionsView.swift in Sources */,
 				009A71AB22EDFB5F00F00796 /* LibraryView.swift in Sources */,
 				009A719722EDF88600F00796 /* AppDelegate.swift in Sources */,
 				009A71B122EE161C00F00796 /* AlbumGridCellView.swift in Sources */,
+				00837E41232304D500DA9343 /* TimeRemainigView.swift in Sources */,
+				00837E3B2322FF8800DA9343 /* PlayView.swift in Sources */,
 				009A71B522EE42EE00F00796 /* BlurredEffectView.swift in Sources */,
+				00837E392322FF1C00DA9343 /* NowPlayingView.swift in Sources */,
 				009A71B722EE876800F00796 /* BottomMusicPlayerView.swift in Sources */,
 				009A719922EDF88600F00796 /* SceneDelegate.swift in Sources */,
 				009A719B22EDF88600F00796 /* ContentView.swift in Sources */,

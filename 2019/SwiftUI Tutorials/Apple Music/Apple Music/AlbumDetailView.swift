@@ -51,7 +51,9 @@ struct AlbumDetailView: View {
                 .padding()
             
             Spacer()
-        }.navigationBarTitle("", displayMode: .inline)
+        }
+            .navigationBarTitle("", displayMode: .inline)
+            .padding(.top)
     }
 }
 
