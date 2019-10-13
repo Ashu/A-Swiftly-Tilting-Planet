@@ -8,7 +8,7 @@ struct ContentView: View {
                 Image(systemName: "house.fill")
             }.tag(0)
             
-            NavigationView { Text("View 2 coming soon?") }
+            NavigationView { SomeView() }
             .tabItem {
                 Image(systemName: "hare.fill")
             }.tag(1)
@@ -33,6 +33,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            
+            ContentView()
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

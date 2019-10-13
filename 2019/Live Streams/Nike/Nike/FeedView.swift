@@ -60,6 +60,12 @@ struct FeedView: View {
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView()
+        Group {
+            FeedView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone XS Max"))
+            
+            FeedView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+        }
     }
 }
